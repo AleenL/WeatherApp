@@ -17,8 +17,8 @@
  height: 2.5rem;
 }
 
-.weatherMsg .weatherTitle:nth-child(n+2){
-	border-top: 1px solid rgba(255,255,255,.5)
+.weatherMsg .first .weatherTitle{
+	border-bottom: 1px solid rgba(255,255,255,.5)
 }
 .weatherMsg .weatherTitle:first-child{
 	margin-bottom: 0.5rem;

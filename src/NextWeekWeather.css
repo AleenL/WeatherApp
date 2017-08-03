@@ -1,0 +1,27 @@
+.NextWeekWeather .iconList p{
+	font-size: 0.7rem !important;
+}
+.NextWeekWeather .iconList p:last-child{
+	margin: 0;
+}
+.NextWeekWeather .iconList{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 3rem;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+}
+.NextWeekWeather{
+	height: 5rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	align-items: center
+}

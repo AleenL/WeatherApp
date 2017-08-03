@@ -6,39 +6,15 @@ class WeatherEN extends React.Component{
 		super(props);
 		this.state={
 			weather:this.props.weather,
-			text:this.props.weather.text
+			classname:null,
+			getIcon:this.props.getIcon
 		}
 	}
 
 
 	componentDidUpdate(nextProps, nextState) {
 		if (this.props.weather !== nextProps.weather){
-			console.log(this.props.weather.text)
-			if(this.props.weather.text.indexOf('多云') >-1){
-				this.setState({
-					text:'Cloudy'
-				})
-			}
-			if(this.props.weather.text.indexOf('晴') > -1 && this.props.weather.text.length<3){
-				this.setState({
-					text:'Sun'
-				})
-			}
-			if(this.props.weather.text.indexOf('雨') > -1){
-				this.setState({
-					text:'Rainy'
-				})
-			}
-			if(this.props.weather.text.indexOf('雪') > -1){
-				this.setState({
-					text:'Snow'
-				})
-			}
-			if(this.props.weather.text.indexOf('阴') > -1){
-				this.setState({
-					text:'Overcast'
-				})
-			}
+			this.Transfrom(this.props.weather.text)
 		}
 	}
 
@@ -49,35 +25,44 @@ class WeatherEN extends React.Component{
 	}
 	
 	Transfrom(state){
+		console.log(state)
 		if(state.indexOf('多云') > -1 ){
 				this.setState({
-					text:'Cloudy'
+					text:'Cloudy',
+					classname:'icon-duoyun'
 				})
 			}
-			if(state.indexOf('晴') > -1 && state.length<3){
+			if(state.indexOf('晴') > -1 && state.length<4){
 				this.setState({
-					text:'Sun'
+					text:'Sun',
+					classname:'icon-qingtian',
 				})
 			}
 			if(state.indexOf('雨') > -1){
 				this.setState({
-					text:'Rainy'
+					text:'Rainy',
+					classname:'icon-zhongyu'
 				})
 			}
 			if(state.indexOf('雪') > -1){
 				this.setState({
-					text:'Snow'
+					text:'Snow',
+					classname:'icon-daxue'
 				})
 			}
 			if(state.indexOf('阴') > -1){
 				this.setState({
-					text:'Overcast'
+					text:'Overcast',
+					classname:'icon-duoyunzhuanyin'
 				})
 			}
 	}
 
 	render(){
-		return(
+		if(this.state.getIcon == 'Icon'){
+			return <p><i className={`icon iconfont ${this.state.classname}`}></i></p>
+		}else{
+			return(
 			<div className='weatherTitle' id="weatherTitle">
 				<Weekday ch={this.props.weather.day} choose='all'/>
 				<div>
@@ -86,6 +71,8 @@ class WeatherEN extends React.Component{
 				</div>
 			</div>
 		)
+		}
+		
 	}
 }
 

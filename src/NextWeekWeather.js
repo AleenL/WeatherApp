@@ -1,5 +1,7 @@
 import React from 'react'
-import GetIcon from './GetIcon'
+import WeatherEN from './weatherEN'
+import WeekdayEN from './WeekdayEN'
+import './NextWeekWeather.css'
 
 class NextWeekWeather extends React.Component{
 	constructor(props) {
@@ -19,29 +21,29 @@ class NextWeekWeather extends React.Component{
 	render(){
 		return(
 			<div className='NextWeekWeather'>
-				<div>
-					<GetIcon day={this.state.day.day1.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day1} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day1.day} choose='enless'/>
 				</div>
-				<div>
-					<GetIcon day={this.state.day.day2.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day2} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day2.day} choose='enless'/>
 				</div>
-				<div>
-					<GetIcon day={this.state.day.day3.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day3} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day3.day} choose='enless'/>
 				</div>
-				<div>
-					<GetIcon day={this.state.day.day4.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day4} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day4.day} choose='enless'/>
 				</div>
-				<div>
-					<GetIcon day={this.state.day.day5.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day5} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day5.day} choose='enless'/>
 				</div>
-				<div>
-					<GetIcon day={this.state.day.day6.text} />
-					<p></p>
+				<div className='iconList'>
+					<WeatherEN weather={this.state.day.day6} getIcon='Icon'/>
+					<WeekdayEN ch={this.state.day.day6.day} choose='enless'/>
 				</div>
 			</div>
 		)

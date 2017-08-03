@@ -3,6 +3,7 @@ import WeatherEN from './weatherEN'
 import NextWeekWeather from './NextWeekWeather'
 
 import './FutureWeather.css'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 class Futureweather extends React.Component{
 	constructor(props) {
@@ -33,7 +34,6 @@ class Futureweather extends React.Component{
 			this.setState({
 				show: true
 			})
-			console.log(this.props.weather)
 			node.style.backgroundColor='rgba(0,0,0,0)'
 		}
 	}
@@ -44,9 +44,11 @@ class Futureweather extends React.Component{
 			<div className='weatherMsg'>
 				<div className='first' onClick={this.handleLogoutClick.bind(this)}>
 					<WeatherEN weather={this.state.day.day1} />
-					<NextWeekWeather day={this.state.day} />
+					{this.state.show &&<NextWeekWeather day={this.state.day} />}
 				</div>
-				{this.state.show && <WeatherEN weather={this.state.day.day2} />}
+				
+					{this.state.show && <WeatherEN weather={this.state.day.day2} />}
+				
 				<div id='weatherList'>
 					
 				</div>
