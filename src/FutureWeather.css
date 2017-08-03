@@ -1,0 +1,44 @@
+.weatherMsg{
+	width: 93%;
+	margin:  0 auto;
+	position: fixed;
+	bottom: 1rem;
+	left: 3.5%;
+}
+
+.weatherMsg .weatherTitle{
+ display: -webkit-flex;
+ display: -moz-flex;
+ display: -ms-flex;
+ display: -o-flex;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: 2.5rem;
+}
+
+.weatherMsg .weatherTitle:nth-child(n+2){
+	border-top: 1px solid rgba(255,255,255,.5)
+}
+.weatherMsg .weatherTitle:first-child{
+	margin-bottom: 0.5rem;
+}
+.weatherMsg .weatherTitle div p{
+	width: 4rem;
+	text-align: right;
+	margin-right: 0.3rem;
+}
+.weatherMsg .weatherTitle p,.weatherMsg .weatherTitle div p{
+	font-size: 0.4rem;
+	line-height: 1.4rem;
+	margin-left: 0.2rem;
+}
+.weatherMsg .weatherTitle div p:last-child{
+	color: rgba(255,255,255,.5);
+}
+
+#weatherList{
+	overflow: hidden;
+	height: 0px;
+	transition: height 1s ease
+}
