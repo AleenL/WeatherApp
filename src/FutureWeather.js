@@ -44,7 +44,7 @@ class Futureweather extends React.Component{
 			<div className='weatherMsg'>
 				<div className='first' onClick={this.handleLogoutClick.bind(this)}>
 					<WeatherEN weather={this.state.day.day1} />
-					{this.state.show &&<NextWeekWeather day={this.state.day} />}
+					{!this.state.show &&<NextWeekWeather day={this.state.day} />}
 				</div>
 				
 					{this.state.show && <WeatherEN weather={this.state.day.day2} />}

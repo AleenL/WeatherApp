@@ -13,76 +13,52 @@ class WeekdayEN extends React.Component{
 
 	componentDidUpdate(nextProps, nextState){
 		if(this.props.ch !== nextProps.ch){
-			if(this.props.ch.indexOf('一') > -1){
+			this.ToEN(this.props.ch)
+		}
+	}
+	
+	ToEN(node){
+		if(node.indexOf('一') > -1){
 				this.setState({
 					en: 'Monday',
 					enless: 'Mon'
 				})
-			}else if(this.props.ch.indexOf('二') >-1 ){
+			}else if(node.indexOf('二') >-1 ){
 				this.setState({
 					en: 'Tuesday',
 					enless: 'Tue'
 				})
-			}else if(this.props.ch.indexOf('三') >-1 ){
+			}else if(node.indexOf('三') >-1 ){
 				this.setState({
 					en: 'Wednesday ',
 					enless: 'Wed'
 				})
-			}else if(this.props.ch.indexOf('四') >-1 ){
+			}else if(node.indexOf('四') >-1 ){
 				this.setState({
 					en: 'Thursday ',
 					enless: 'Thu'
 				})
-			}else if(this.props.ch.indexOf('五') >-1 ){
+			}else if(node.indexOf('五') >-1 ){
 				this.setState({
 					en: 'Friday ',
 					enless: 'Fri'
 				})
-			}else if(this.props.ch.indexOf('六') >-1 ){
+			}else if(node.indexOf('六') >-1 ){
 				this.setState({
 					en: 'Saturday',
 					enless: 'Sat'
 				})
-			}else if(this.props.ch.indexOf('日')>-1 || this.props.ch.indexOf('天')>-1){
+			}else if(node.indexOf('日')>-1 || node.indexOf('天')>-1){
 				this.setState({
 					en: 'Sunday',
 					enless: 'Sun'
 				})
 			}
-		}
 	}
 
 	componentDidMount() {
 		if(this.state.ch){
-			if(this.state.ch.indexOf('一') > -1){
-				this.setState({
-					en: 'Monday'
-				})
-			}else if(this.state.ch.indexOf('二') >-1 ){
-				this.setState({
-					en: 'Tuesday'
-				})
-			}else if(this.state.ch.indexOf('三') >-1 ){
-				this.setState({
-					en: 'Wednesday '
-				})
-			}else if(this.state.ch.indexOf('四') >-1 ){
-				this.setState({
-					en: 'Thursday '
-				})
-			}else if(this.state.ch.indexOf('五') >-1 ){
-				this.setState({
-					en: 'Friday '
-				})
-			}else if(this.state.ch.indexOf('六') >-1 ){
-				this.setState({
-					en: 'Saturday'
-				})
-			}else if(this.state.ch.indexOf('日')>-1 || this.state.ch.indexOf('天')>-1){
-				this.setState({
-					en: 'Sunday'
-				})
-			}
+			this.ToEN(this.state.ch)
 		}
 	}
 

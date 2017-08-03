@@ -16,7 +16,6 @@
 	flex-direction: column;
 }
 .NextWeekWeather{
-	height: 5rem;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
