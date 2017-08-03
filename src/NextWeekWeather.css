@@ -11,16 +11,17 @@
 	display: -o-flex;
 	display: flex;
 	width: 3rem;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 }
 .NextWeekWeather{
+	height: 4rem;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center
 }
