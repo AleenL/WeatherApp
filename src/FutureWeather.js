@@ -29,14 +29,12 @@ class Futureweather extends React.Component{
 				show: false
 			})
 			node.style.backgroundColor='rgba(10,10,10,.1)'
-			wList.style.height='5rem'
 		}else{
-			setTimeout(() => this.setState({
+			this.setState({
 				show: true
-			}),1000)
+			})
 			console.log(this.props.weather)
 			node.style.backgroundColor='rgba(0,0,0,0)'
-			wList.style.height='0rem'
 		}
 	}
 
