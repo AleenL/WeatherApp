@@ -24,7 +24,7 @@ class Futureweather extends React.Component{
 		}
 	}
 
-	
+
 	componentDidUpdate(nextProps, nextState) {
 		if (this.props.weather !== nextProps.weather)
 		this.setState({
@@ -35,7 +35,17 @@ class Futureweather extends React.Component{
 	
 	
 	render(){
+		const About = () =>(
+		<NextWeekTmp day={this.state.today[1]} />
+	)
+	
+	const Home = () =>(
+		<NextWeekWeather day={this.state.today[1]} />
+	)
 
+	const Message = () =>(
+		<WeatherEN weather={this.state.day.day2} />
+	)
 		return (
 			<div className='weatherMsg'>
 				<div className='first'>
@@ -53,16 +63,6 @@ class Futureweather extends React.Component{
 		)
 	}
 }
-const About = () =>(
-		<NextWeekTmp day={this.props.weather[1]} />
-	)
-	
-	const Home = () =>(
-		<NextWeekWeather day={this.props.weather[1]} />
-	)
 
-	const Message = () =>(
-		<WeatherEN weather={this.state.day.day2} />
-	)
 
 export default Futureweather

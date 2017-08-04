@@ -87,11 +87,11 @@ class Weather extends React.Component{
 
 	render(){
 		const About = () =>(
-			<NextWeekTmp day={this.state.today} />
-		)
+		<NextWeekTmp day={this.state.future} />
+	)
 	
 	const Home = () =>(
-		<NextWeekWeather day={this.state.today} />
+		<NextWeekWeather day={this.state.future} />
 	)
 
 	const Message = () =>(
@@ -112,6 +112,6 @@ class Weather extends React.Component{
 		)
 	}
 }
-
+	
 
 export default Weather
