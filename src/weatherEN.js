@@ -7,25 +7,30 @@ class WeatherEN extends React.Component{
 		this.state={
 			weather:this.props.weather,
 			classname:null,
-			getIcon:this.props.getIcon
+			getIcon:this.props.getIcon,
+			update:1,
 		}
 	}
 
 
-	componentDidUpdate(nextProps, nextState) {
+	/*componentDidUpdate(nextProps, nextState) {
 		if (this.props.weather !== nextProps.weather){
 			this.Transfrom(this.props.weather.text)
 		}
-	}
+	}*/
 
 	componentDidMount() {
-		if(this.state.weather.text){
-			this.Transfrom(this.state.weather.text)
-		}
+		console.log(1)
+		if(this.state.weather.text)
+		this.Transfrom(this.state.weather.text)
+		this.setState({
+			update:2
+		})
 	}
 	
 	Transfrom(state){
-		console.log(state)
+		
+			
 		if(state.indexOf('多云') > -1 ){
 				this.setState({
 					text:'Cloudy',

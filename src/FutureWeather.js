@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import WeatherEN from './weatherEN'
-import NextWeekWeather from './NextWeekWeather'
-import NextWeekTmp from './NextWeekTmp'
+
+
 import {
   HashRouter,
   Route,
@@ -35,17 +35,7 @@ class Futureweather extends React.Component{
 	
 	
 	render(){
-		const About = () =>(
-		<NextWeekTmp day={this.state.today[1]} />
-	)
 	
-	const Home = () =>(
-		<NextWeekWeather day={this.state.today[1]} />
-	)
-
-	const Message = () =>(
-		<WeatherEN weather={this.state.day.day2} />
-	)
 		return (
 			<div className='weatherMsg'>
 				<div className='first'>
