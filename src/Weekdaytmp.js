@@ -22,7 +22,7 @@ class WeekdayEN extends React.Component{
 	}
 
 	render(){
-		return <p>{this.state.tmp}</p>	
+		return <p>{this.state.tmp}°</p>	
 	}
 }
 

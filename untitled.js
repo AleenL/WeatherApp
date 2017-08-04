@@ -12,8 +12,6 @@ import {
 import './FutureWeather.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-	
-
 class Futureweather extends React.Component{
 	constructor(props) {
 		super(props);
@@ -23,8 +21,6 @@ class Futureweather extends React.Component{
 			show:true,
 		}
 	}
-
-	
 	componentDidUpdate(nextProps, nextState) {
 		if (this.props.weather !== nextProps.weather)
 		this.setState({
@@ -32,37 +28,41 @@ class Futureweather extends React.Component{
 			day:this.props.weather[1],
 		})
 	}
-	
-	
+
+	handleLogoutClick(){
+		let node = document.getElementById('weatherTitle'),
+		    wList = document.getElementById('weatherList')
+		if(this.state.show){
+			this.setState({
+				show: false
+			})
+			node.style.backgroundColor='rgba(10,10,10,.1)'
+		}else{
+			this.setState({
+				show: true
+			})
+			node.style.backgroundColor='rgba(0,0,0,0)'
+		}
+	}
+
 	render(){
 
 		return (
 			<div className='weatherMsg'>
 				<div className='first'>
 					<WeatherEN weather={this.state.day.day1} />
+					{!this.state.show && <NextWeekTmp day={this.state.day} />}
+					{!this.state.show &&<NextWeekWeather day={this.state.day} />}
 				</div>
-				{this.props.children}
-				<div>
-				<ul>
-          			<li><Link to="/">Home</Link></li>
-          			<li><Link to="/about">About</Link></li>
-          			<li><Link to="/Message">Inbox</Link></li>
-        		</ul>
+				
+					{this.state.show && <WeatherEN weather={this.state.day.day2} />}
+				
+				<div id='weatherList'>
+					
 				</div>
 			</div>	
 		)
 	}
 }
-const About = () =>(
-		<NextWeekTmp day={this.props.weather[1]} />
-	)
-	
-	const Home = () =>(
-		<NextWeekWeather day={this.props.weather[1]} />
-	)
-
-	const Message = () =>(
-		<WeatherEN weather={this.state.day.day2} />
-	)
 
 export default Futureweather

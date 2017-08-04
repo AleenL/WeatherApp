@@ -59,7 +59,7 @@ class WeatherEN extends React.Component{
 	}
 
 	render(){
-		if(this.state.getIcon == 'Icon'){
+		if(this.state.getIcon === 'Icon'){
 			return <p><i className={`icon iconfont ${this.state.classname}`}></i></p>
 		}else{
 			return(

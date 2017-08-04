@@ -12,8 +12,6 @@ import {
 import './FutureWeather.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-	
-
 class Futureweather extends React.Component{
 	constructor(props) {
 		super(props);
@@ -23,8 +21,6 @@ class Futureweather extends React.Component{
 			show:true,
 		}
 	}
-
-	
 	componentDidUpdate(nextProps, nextState) {
 		if (this.props.weather !== nextProps.weather)
 		this.setState({
@@ -33,7 +29,17 @@ class Futureweather extends React.Component{
 		})
 	}
 	
+	const About = () =>(
+		<NextWeekTmp day={this.state.day} />
+	)
 	
+	const Home = () =>(
+		<NextWeekWeather day={this.state.day} />
+	)
+
+	const Message = () =>(
+		<WeatherEN weather={this.state.day.day2} />
+	)
 	render(){
 
 		return (
@@ -46,23 +52,12 @@ class Futureweather extends React.Component{
 				<ul>
           			<li><Link to="/">Home</Link></li>
           			<li><Link to="/about">About</Link></li>
-          			<li><Link to="/Message">Inbox</Link></li>
+          			<li><Link to="/inbox">Inbox</Link></li>
         		</ul>
 				</div>
 			</div>	
 		)
 	}
 }
-const About = () =>(
-		<NextWeekTmp day={this.props.weather[1]} />
-	)
-	
-	const Home = () =>(
-		<NextWeekWeather day={this.props.weather[1]} />
-	)
-
-	const Message = () =>(
-		<WeatherEN weather={this.state.day.day2} />
-	)
 
 export default Futureweather

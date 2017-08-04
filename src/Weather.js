@@ -2,7 +2,15 @@ import React from 'react'
 import Futureweather from './FutureWeather'
 import Feel from './Feel'
 import './Weather.css'
-
+import {
+  HashRouter,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom';
+import WeatherEN from './weatherEN'
+import NextWeekWeather from './NextWeekWeather'
+import NextWeekTmp from './NextWeekTmp'
 class Weather extends React.Component{
 	constructor(props) {
 
@@ -22,6 +30,8 @@ class Weather extends React.Component{
 			}
 		}
 	}
+
+
 
 	componentDidMount() {
 		var that = this;
@@ -76,14 +86,32 @@ class Weather extends React.Component{
 		}
 
 	render(){
+		const About = () =>(
+			<NextWeekTmp day={this.state.today} />
+		)
+	
+	const Home = () =>(
+		<NextWeekWeather day={this.state.today} />
+	)
+
+	const Message = () =>(
+		<WeatherEN weather={this.state.future.day2} />
+	)
 		return (
 			<div className='titleText'>
 				<p>{this.state.tmp}<span>°</span></p>
 				<Feel tmp={this.state.tmp} />
-				<Futureweather weather={[this.state.today,this.state.future]} />
+				<HashRouter>
+    				<Futureweather weather={[this.state.today,this.state.future]}>
+        				<Route exact path="/" component={Home} />
+        				<Route path="/about" component={About} />
+        				<Route path="/Message" component={Message} />
+    				</Futureweather>
+  				</HashRouter>
 			</div>
 		)
 	}
 }
+
 
 export default Weather
