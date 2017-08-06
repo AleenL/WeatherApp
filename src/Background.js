@@ -1,7 +1,8 @@
 import React from 'react'
 import './Background.css'
 import Weather from './Weather'
-import Clock from './Clock'
+import GetCity from './getCity'
+
 
 class Background extends React.Component{
 	constructor(props) {
@@ -13,7 +14,7 @@ class Background extends React.Component{
 	}
 	
 	componentDidMount() {
-		setInterval(() => this.setState({date:new Date}),1000 )
+		setInterval(() => this.setState({date:new Date}),100000)
 	}
 
 		render(){
@@ -32,7 +33,7 @@ class Background extends React.Component{
 			
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
-					<Weather source="https://weixin.jirengu.com/weather" />
+					<GetCity />
 					
 				</div>
 			)

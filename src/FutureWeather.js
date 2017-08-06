@@ -44,7 +44,7 @@ class Futureweather extends React.Component{
 				{this.props.children}
 				<div>
 				<ul>
-          			<li><Link to="/">Home</Link></li>
+          			<li><Link to="/Home">Home</Link></li>
           			<li><Link to="/about">About</Link></li>
           			<li><Link to="/Message">Inbox</Link></li>
         		</ul>

@@ -73,37 +73,38 @@ class Weather extends React.Component{
 							reject(new Error(this.statusText))
 						}
 					}
-				})
-				return promise
-			}
-
-			getJSON(this.props.source).then(function(result){
-				getWeather(JSON.parse(result))
-				
-			},function(error){
-				console.log(error)
 			})
+			return promise
 		}
+
+		getJSON(this.props.source).then(function(result){
+			getWeather(JSON.parse(result))
+			
+		},function(error){
+			console.log(error)
+		})
+	}
 
 	render(){
 		const About = () =>(
-		<NextWeekTmp day={this.state.future} />
-	)
-	
-	const Home = () =>(
-		<NextWeekWeather day={this.state.future} />
-	)
+			<NextWeekTmp day={this.state.future} />
+		)
+		
+		const Home = () =>(
+			<NextWeekWeather day={this.state.future} />
+		)
 
-	const Message = () =>(
-		<WeatherEN weather={this.state.future.day2} />
-	)
+		const Message = () =>(
+			<WeatherEN weather={this.state.future.day2} />
+		)
+
 		return (
 			<div className='titleText'>
 				<p>{this.state.tmp}<span>°</span></p>
 				<Feel tmp={this.state.tmp} />
 				<HashRouter>
     				<Futureweather weather={[this.state.today,this.state.future]}>
-        				<Route exact path="/" component={Home} />
+        				<Route exact path="/Home" component={Home} />
         				<Route path="/about" component={About} />
         				<Route path="/Message" component={Message} />
     				</Futureweather>

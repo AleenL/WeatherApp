@@ -29,17 +29,7 @@ class Futureweather extends React.Component{
 		})
 	}
 	
-	const About = () =>(
-		<NextWeekTmp day={this.state.day} />
-	)
-	
-	const Home = () =>(
-		<NextWeekWeather day={this.state.day} />
-	)
 
-	const Message = () =>(
-		<WeatherEN weather={this.state.day.day2} />
-	)
 	render(){
 
 		return (
