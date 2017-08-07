@@ -1,14 +1,15 @@
 import React from 'react'
 import './GetCity.css'
+import InputCity from './InputCity'
 
 class GetCity extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
-		 city: [
-		 	{city:'北京',town:[['北京','beijing']]},
-			{city:'上海',town:[['上海','shanghai']]},
-			{city:'重庆',town:[['重庆','chongqing']]},
+		 city:[
+		 	{city:'北京',town:[['朝阳','chaoyang'],['海淀','haidian'],['丰台','fengtai'],['宣武','xuanweu']]},
+			{city:'上海',town:[['浦东','pudong'],['黄埔','huangpu'],['嘉定','jiading'],['奉贤','fengxian']]},
+			{city:'重庆',town:[['石柱','shizhu'],['秀山','xiushan'],['渝中','yuzhong'],['巴南','banan'],['酉阳','youyang'],['开县','kaixian'],['丰都','fengdu'],['渝北','yubei']]},
 			{city:'河北',town:[['石家庄','shijiazhuang'],['唐山','tangshan'],['邯郸','handan'],['邢台','xingtai'],['沧州','cangzhou'],['秦皇岛','qinghuangdao'],['张家口','zhangjiakou'],['衡水','hengshui'],['廊坊','langfang'],['承德','chengde']]},
 			{city:'河南',town:[['郑州','zhengzhou'],['南阳','nanyang'],['新乡','xinxiang'],['安阳','anyang'],['洛阳','luoyang'],['信阳','xinyang'],['平顶山','pingdingshan'],['周口','zhoukou'],['商丘','shangqiu'],['开封','kaifeng'],['焦作','jiaozuo'],['驻马店','zhumadian'],['濮阳','puyang'],['三门峡','sanmenxia'],['漯河','luohe'],['许昌','xuchang'],['鹤壁','hebi'],['济源','jiyuan']]},
 			{city:'云南',town:[['昆明','kunming'],['红河','honghe'],['大理','dali'],['文山','wenshan'],['德宏','dehong'],['曲靖','qujing'],['昭通','zhaotong'],['楚雄','chuxiong'],['保山','baoshan'],['玉溪','yuxi'],['丽江','lijiang'],['临沧','lingcang'],['思茅','simao'],['西双版纳','xishuangbanna'],['怒江','nujiang'],['迪庆','diqing']]},
@@ -81,7 +82,7 @@ class GetCity extends React.Component{
 		console.log(e.target.nextElementSibling,e.target)
 	}
 	*/
-	changeHeight(e){
+	/*changeHeight(e){
 		let ulNode = e.target.nextElementSibling,
 			index = ulNode.getElementsByTagName('li').length
 
@@ -94,26 +95,14 @@ class GetCity extends React.Component{
 	
 	hello(e){
 		console.log(e.target)
-	}
+	}*/
 
 	render(){
 		return(
-			<ul id='cityName'>
-				{this.state.city.map(function(item,index){
-					return (
-						<li key={index}>
-							<div className='cityitems' onClick={this.changeHeight.bind(this)} >{item.city}</div>
-							<ul>
-								{item.town.map(function(item,index){
-										return <li data={item[1]} onClick={this.hello.bind(this)} key={index}>{item[0]}</li>
-									},this)
-								}
-							</ul>
-						</li>
-						)
-					},this)
-				}
-			</ul>
+
+			<InputCity city={this.state.city}/>
+
+
 		)
 	}
 }
