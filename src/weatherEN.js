@@ -65,7 +65,7 @@ class WeatherEN extends React.Component{
 			<div className='weatherTitle' id="weatherTitle">
 				<Weekday ch={this.props.weather.day} choose='all'/>
 				<div>
-					<p>{this.props.weather.high}<span>°</span></p>
+					<p>{this.props.weather.high}°<span>/</span>{this.props.weather.low}°</p>
 					<p>{this.state.text} </p>
 				</div>
 			</div>

@@ -15,13 +15,14 @@ class GetTwon extends React.Component{
 	}
 
 	getWeather(event){
-		let en=event.target.getAttribute('class'),ch=event.target.innerText
-		var that = this
+		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
 		this.getJSON('https://weixin.jirengu.com/weather/cityid','get',{location:en},true).then(function(response){
 				console.log(response)
 				that.getCityId(response,ch)
 			},function(error){
-				console.error('失败')
+				console.log('失败')
+		}).catch(function(){
+			console.log('error')
 		})
 	}
 
@@ -59,13 +60,14 @@ class GetTwon extends React.Component{
 	}
 
 	getCityId(Json,name){
+		let that = this;
 		for(let i=0;i<Json.results.length;i++){
 			if(Json.results[i].name === name){
 				this.getJSON('https://weixin.jirengu.com/weather/now','get',{cityid:Json.results[i].id},true).then(
 					function(response){
-						console.log(response)
+						that.setState({getWeather:response})
 					},function(error){
-						console.error('失败')
+						alert('失败')
 					}
 				)
 			}

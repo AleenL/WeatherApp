@@ -33,7 +33,7 @@ class Background extends React.Component{
 			
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
-					<GetCity />
+					<Weather source="https://weixin.jirengu.com/weather" />
 					
 				</div>
 			)
