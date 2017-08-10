@@ -1,4 +1,5 @@
 import React from 'react'
+import Ajax from './Ajax'
 
 class GetTwonByChoose extends React.Component{
 	constructor(props) {
