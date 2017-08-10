@@ -18,9 +18,9 @@ class Background extends React.Component{
 	}
 
 		render(){
-			const hours = this.state.date.getHours(),
+			const hours = this.state.date.getHours()/*,
 				  minutes = this.state.date.getMinutes(),
-				  seconds = this.state.date.getSeconds()
+				  seconds = this.state.date.getSeconds()*/
 
 			let BackgroundUrl = null
 			if(hours>6 && hours<17){
@@ -33,8 +33,8 @@ class Background extends React.Component{
 			
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
-					<Weather source="https://weixin.jirengu.com/weather" />
-					
+					{/*<Weather source="https://weixin.jirengu.com/weather" />*/}
+					< GetCity />
 				</div>
 			)
 	}	

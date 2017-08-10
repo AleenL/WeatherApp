@@ -13,9 +13,9 @@ class NextWeekWeather extends React.Component{
 
 	componentDidUpdate(nextProps, nextState) {
 		if (this.props.day !== nextProps.day)
-		this.setState({
-			day:this.props.day
-		})
+			this.setState({
+				day:this.props.day
+			})
 	}
 
 	render(){
