@@ -10,9 +10,11 @@ class GetTwonByChoose extends React.Component{
 	}
 	
 	getWeather(event){
-			//获取城市的拼音值和汉字值
+
+		//获取城市的拼音值和汉字值
 		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
 		//获取城市ID
+		console.log(en,ch)
 		var getCity = new Ajax('https://weixin.jirengu.com/weather/cityid','get',{location:en},true)
 		getCity.getMsg().then(function(response){
 				//当ID值获取到就再一步获取该ID值的天气
@@ -27,14 +29,16 @@ class GetTwonByChoose extends React.Component{
 	}
 
 	getCityId(Json,name){
-		let that = this;
+		let that = this,flag = true
 		for(let i=0;i<Json.results.length;i++){
 			if(Json.results[i].name === name){
 				var getWeather = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:Json.results[i].id},true)
 				getWeather.getMsg().then(
 					function(response){
+						if(!flag) return false;
 						console.log(response)
 						that.setState({getWeather:response})
+						flag = false
 					},function(error){
 						alert('失败')
 					}

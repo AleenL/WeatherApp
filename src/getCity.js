@@ -10,7 +10,7 @@ class GetCity extends React.Component{
 		this.state={
 		 city:[
 		 	{city:'北京',town:[['北京','beijing'],['朝阳','chaoyang'],['房山','fangshan'],['怀柔','huairou'],['石景山','shijingshan'],['通州','tongzhou'],['延庆','yanqing'],['密云','miyun'],['平谷','pinggu']]},
-			{city:'上海',town:[['上海','shanghai'],['浦东','pudong'],['金山','金山'],['嘉定','jiading'],['奉贤','fengxian'],['闵行','minhang'],['宝山','baoshan'],['浦东南汇','pudongnanhui'],['徐家汇','xujiahui'],['青浦','qingpu']]},
+			{city:'上海',town:[['上海','shanghai'],['浦东','pudong'],['金山','jinshan'],['嘉定','jiading'],['奉贤','fengxian'],['闵行','minhang'],['宝山','baoshan'],['浦东南汇','pudongnanhui'],['徐家汇','xujiahui'],['青浦','qingpu']]},
 			{city:'重庆',town:[['重庆','chongqing'],['武隆','wulong'],['石柱','shizhu'],['秀山','xiushan'],['渝中','yuzhong'],['巴南','banan'],['酉阳','youyang'],['开县','kaixian'],['丰都','fengdu'],['渝北','yubei'],['璧山','bishan'],['垫江','dianjiang'],['大足','dazu'],['巫溪','wuxi']]},
 			{city:'河北',town:[['石家庄','shijiazhuang'],['唐山','tangshan'],['邯郸','handan'],['邢台','xingtai'],['沧州','cangzhou'],['秦皇岛','qinghuangdao'],['张家口','zhangjiakou'],['衡水','hengshui'],['廊坊','langfang'],['承德','chengde']]},
 			{city:'河南',town:[['郑州','zhengzhou'],['南阳','nanyang'],['新乡','xinxiang'],['安阳','anyang'],['洛阳','luoyang'],['信阳','xinyang'],['平顶山','pingdingshan'],['周口','zhoukou'],['商丘','shangqiu'],['开封','kaifeng'],['焦作','jiaozuo'],['驻马店','zhumadian'],['濮阳','puyang'],['三门峡','sanmenxia'],['漯河','luohe'],['许昌','xuchang'],['鹤壁','hebi'],['济源','jiyuan']]},
@@ -47,7 +47,7 @@ class GetCity extends React.Component{
 	changeHeight(e){
 		let ulNode = e.target.nextSibling,
 			index = ulNode.getElementsByTagName('li').length
-		console.log(ulNode,index)
+
 		if( ulNode.style.height === '0px' || !ulNode.style.height){
 			ulNode.style.height = index*2.5+'rem'
 		}else{
@@ -67,7 +67,7 @@ class GetCity extends React.Component{
 						</li>		
 						)
 					},this)}
-				
+				{/*<InputCity city={this.state.city}/>*/}
 			</div>
 			
 		)
