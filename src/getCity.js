@@ -69,7 +69,7 @@ class GetCity extends React.Component{
 					},this)}
 				{/*<InputCity city={this.state.city}/>*/}
 			</div>
-			
+			 
 		)
 	}
 }

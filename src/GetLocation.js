@@ -12,9 +12,10 @@ import WeatherEN from './weatherEN'
 import NextWeekWeather from './NextWeekWeather'
 import NextWeekTmp from './NextWeekTmp'
 import Ajax from './Ajax'
-class Weather extends React.Component{
-	constructor(props) {
+import GetHoursWea from './GetHoursWea'
 
+class GetLocation extends React.Component{
+	constructor(props) {
 		super(props);
 		this.state = {
 			city: null,
@@ -29,19 +30,61 @@ class Weather extends React.Component{
 				day5:" ",
 				day6:" "
 			},
-			hours:{
-
-			}
+			hours:null
 		}
 	}
 
-
-
 	componentDidMount() {
-		var that = this;
-		
-		function getWeather(result){
+		this.getLocation()
+	}
+
+	getLocation(){
+		let that = this;
+		const Location = new Ajax('https://weixin.jirengu.com/weather/ip','get')
+		Location.getMsg().then(function(data){
+			that.getCityId(data)
+		},function(error){
+			//未获取到就返回失败
+			console.log('失败')
+		}).catch(function(Error){
+			console.log('Error')
+		})
+	}
+
+	getCityId(data){
+		let that = this;
+		var CityId = new Ajax('https://weixin.jirengu.com/weather/cityid','get',{location:data.data},true)
+		CityId.getMsg().then(function(data){
+			that.getWeather(data.results[0].id)
+			that.getHours(data.results[0].id)
+		},function(error){
+			//未获取到就返回失败
+			console.log('失败')
+		}).catch(function(Error){
+			console.log('Error')
+		})
+	}
+
+	getHours(data){
+		let that = this;
+		var CityId = new Ajax('https://weixin.jirengu.com/weather/future24h','get',{cityid:data},true)
+		CityId.getMsg().then(function(result){
 			console.log(result)
+			that.setState({
+      		 	hours:result.hourly  		 
+      		 })
+		},function(error){
+			//未获取到就返回失败
+			console.log('失败')
+		}).catch(function(Error){
+			console.log('Error')
+		})
+	}
+
+	getWeather(data){
+		let that = this;
+		var CityId = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:data},true)
+		CityId.getMsg().then(function(result){
 			that.setState({
       		 	tmp: result.weather[0].now.temperature,
       		 	city: result.weather[0].city_name,
@@ -55,40 +98,13 @@ class Weather extends React.Component{
       		 		day6: result.weather[0].future[5]
       		 	}      		 
       		 })
-		}
-		
-		
-		/*var getJSON = function(url){
-			
-			let promise = new Promise(function(resolve,reject){
-				let client = new XMLHttpRequest()
-					client.open('GET',url)
-					client.onreadystatechange = handler
-					client.responeType = 'JSON'
-					client.setRequestHeader('Accept','application/json')
-					client.send()
-
-					function handler(){
-						if( this.readyState !==4 ){
-							return
-						}
-						if( this.status === 200 ){
-							resolve(this.response)
-						}else{
-							reject(new Error(this.statusText))
-						}
-					}
-			})
-			return promise
-		}
-
-		getJSON(this.props.source).then(function(result){
-			getWeather(JSON.parse(result))
-			
 		},function(error){
-			console.log(error)
+			//未获取到就返回失败
+			console.log('失败')
+		}).catch(function(Error){
+			console.log('Error')
 		})
-	}*/
+	}
 
 	render(){
 		const About = () =>(
@@ -107,6 +123,9 @@ class Weather extends React.Component{
 			<div className='titleText'>
 				<p>{this.state.tmp}<span>°</span></p>
 				<Feel tmp={this.state.tmp} />
+				<div>
+					<GetHoursWea weather={this.state.hours}/>
+				</div>
 				<HashRouter>
     				<Futureweather weather={[this.state.today,this.state.future]}>
         				<Route exact path="/Home" component={Home} />
@@ -118,6 +137,5 @@ class Weather extends React.Component{
 		)
 	}
 }
-	
 
-export default Weather
+export default GetLocation
