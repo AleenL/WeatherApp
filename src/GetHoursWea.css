@@ -16,3 +16,7 @@
 	list-style: none;
 	padding: 0px 20px;
 }
+
+.dayMsg li i{
+	font-size: 3rem;
+}

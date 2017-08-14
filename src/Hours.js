@@ -9,7 +9,7 @@ class Hours extends React.Component{
 	}
 
 	componentDidUpdate(nextProps) {
-		console.log(this.state.hours)
+		console.log(11)
 		if(this.props.hours !== nextProps.hours){
 			
 			this.setState({
