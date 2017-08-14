@@ -1,0 +1,18 @@
+.dayMsg{
+	width: 100%;
+	height: 30vh;
+	background: rgba(0,0,0,.4);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow-x: scroll
+}
+
+.dayMsg li{
+	list-style: none;
+	padding: 0px 20px;
+}
