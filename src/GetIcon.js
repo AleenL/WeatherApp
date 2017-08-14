@@ -10,6 +10,7 @@ class GetIcon extends React.Component{
 	}
 
 	componentDidUpdate(nextProps, nextState) {
+		console.log(this.props.day)
 		if(this.props.day !== nextProps.day){
 			console.log(this.props.day)
 			if(this.props.day === '多云'){
@@ -43,8 +44,8 @@ class GetIcon extends React.Component{
 	render(){
 		return(
 			<p>
-				<i className={this.state.classname}>
-				</i>
+				{this.state.classname &&  <i className={this.state.classname}>
+				</i>}
 			</p>
 		)
 	}

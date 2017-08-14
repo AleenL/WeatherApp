@@ -1,5 +1,6 @@
 import React from 'react'
 import GetTwon from './GetTwon'
+import './InputCity.css'
 
 class InputCity extends React.Component{
 	constructor(props) {
@@ -10,26 +11,21 @@ class InputCity extends React.Component{
 		}
 	}
 
-	getWeather(event){
-		console.log(event.target.innerText)
-		console.log(event.target.ClassName)
-	}	
-
-	
-
-
-
 	changeTitle(event){
-		// console.log(event.target.value);
-		// document.getElementById('getString').innerHTML = ''
-		if(event.target.value.length === 0 ) return false;
 		var newArr = []
 		this.preOrder(this.state.city,event.target.value,newArr)
+		console.log(newArr)
 		if(newArr.length !== 0){
 			this.setState({
 				getCity: newArr
 			})
 		}
+		if(event.target.value.length === 0 ){
+			this.setState({
+				getCity:[]
+			})
+		}
+
 	}
 
 	preOrder(s,value,arr){
@@ -40,7 +36,14 @@ class InputCity extends React.Component{
 					this.preOrder(s[i],value,arr)
 				}
 			}
+
 			if(newValue[0].replace(/[^\u4e00-\u9fa5]/gi,"").indexOf(value) > -1){
+				if(newValue[0].split(",").length > 2) return false;
+				arr.push(newValue[0])
+				return arr
+			}
+			if(newValue[0].replace(/[^a-zA-Z]/gi,"").substring(0,value.length) === value.substring(0,value.length)){
+				console.log(newValue[0].replace(/[^a-zA-Z]/gi,"").substring(0,value.length),value.substring(0,value.length))
 				if(newValue[0].split(",").length > 2) return false;
 				arr.push(newValue[0])
 				return arr
@@ -50,7 +53,7 @@ class InputCity extends React.Component{
 
 	render() {
 		return (
-			<div>
+			<div className='searchPage'>
 				<input type='text'
 				className = 'GetCity'
 				onChange = {this.changeTitle.bind(this)}/>

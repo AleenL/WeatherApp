@@ -36,6 +36,8 @@ class GetLocation extends React.Component{
 
 	componentDidMount() {
 		this.getLocation()
+		
+		
 	}
 
 	getLocation(){
@@ -69,10 +71,11 @@ class GetLocation extends React.Component{
 		let that = this;
 		var CityId = new Ajax('https://weixin.jirengu.com/weather/future24h','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
-			console.log(result)
+			
 			that.setState({
       		 	hours:result.hourly  		 
       		 })
+
 		},function(error){
 			//未获取到就返回失败
 			console.log('失败')

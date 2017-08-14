@@ -1,4 +1,5 @@
 import React from 'react'
+import WeatherEN from './weatherEN'
 
 class GetHoursWea extends React.Component{
 	constructor(props) {
@@ -9,20 +10,21 @@ class GetHoursWea extends React.Component{
 	}
 
 	componentDidUpdate(nextProps) {
-		console.log(this.props.weather[0].code)
 		if(this.props.weather !== nextProps.weather){
 			this.setState({
 				weather:this.props.weather
 			})
 		}
+		
 	}
-
 
 
 	render(){
 		return(
-			<ul>
-				
+			<ul className='dayMsg'>
+				{this.state.weather && this.state.weather.map(function(value,index){
+					return <li key={index}><WeatherEN weather={value} getIcon='Icon'/></li>
+				})}
 			</ul>
 		)
 	}

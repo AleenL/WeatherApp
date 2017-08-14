@@ -1,7 +1,7 @@
 import React from 'react'
 import './Background.css'
-/*import Weather from './Weather'
-import GetCity from './getCity'*/
+/*import Weather from './Weather'*/
+import GetCity from './getCity'
 import GetLocation from './GetLocation'
 
 class Background extends React.Component{
@@ -34,7 +34,7 @@ class Background extends React.Component{
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
 					{/*<Weather source="https://weixin.jirengu.com/weather" />*/}
-					{/*< GetCity />*/}
+					{/*<GetCity />*/}
 					<GetLocation />
 				</div>
 			)

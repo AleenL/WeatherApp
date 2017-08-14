@@ -33,6 +33,8 @@ class GetTwon extends React.Component{
 		})
 	
 	}
+
+
 	getCityId(Json,name){
 		let that = this;
 		for(let i=0;i<Json.results.length;i++){
