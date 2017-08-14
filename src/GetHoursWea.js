@@ -24,15 +24,14 @@ class GetHoursWea extends React.Component{
 
 	render(){
 		return(
-			<div>
+			<div className='dayTmp'>
 				{this.state.weather && <PieReact tmp={this.state.weather} />}
 				<ul className='dayMsg'>
 					
 					{this.state.weather && this.state.weather.map(function(value,index){
 						return (
-							<li key={index}>
+							<li key={index} className='weatherIcon'>
 								<WeatherEN weather={value} getIcon='Icon'/>
-								<p>{value.temperature}<span>°</span></p>
 								<p>{index+1}时</p>
 							</li>
 						)
