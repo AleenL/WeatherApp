@@ -44,16 +44,6 @@ class GetCity extends React.Component{
 	}
 	
 	
-	changeHeight(e){
-		let ulNode = e.target.nextSibling,
-			index = ulNode.getElementsByTagName('li').length
-		console.log(ulNode,index)
-		if( ulNode.style.height === '0px' || !ulNode.style.height){
-			ulNode.style.height = index*2.5+'rem'
-		}else{
-			ulNode.style.height = 0
-		}
-	}
 	
 
 	render(){
@@ -62,7 +52,7 @@ class GetCity extends React.Component{
 				{this.state.city.map(function(value,index){
 					return(
 						<li key={index} >
-							<div className='cityItems' onClick={this.changeHeight.bind(this)}>{value.city}</div>
+							<div className='cityItems' >{value.city}</div>
 							<GetTwonByChoose town={value.town}/>
 						</li>		
 						)

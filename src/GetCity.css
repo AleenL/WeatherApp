@@ -3,6 +3,7 @@
 	height: 100vh;
 	overflow-y: auto;
 	list-style: none;
+	background: #fafafa;
 }
 
 
@@ -10,12 +11,10 @@
 #cityName li .cityItems{
 	width: 100%;
 	font-family: 'Microsoft Yahei';
-	line-height: 3rem;
-	font-size: 1.2rem;
+	line-height: 2rem;
+	font-size: 1rem;
 	text-indent: 1rem;
-	background: rgba(25,25,25,.1);
-	color: rgba(255,255,255,.7);
-	border-bottom: 1px solid rgba(255,255,255,.3)
+	color: #ccc;
 }
 
 #cityName li ul li{
