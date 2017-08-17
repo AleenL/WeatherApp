@@ -18,10 +18,14 @@ class InputCity extends React.Component{
 
 	removeResult(node){
 		let ResultPage = document.getElementsByClassName('searchPage')[0]
-		if(node){
-			ResultPage.style.overflow='visible'
+		let allPage = document.getElementById('cityName')
+		if(!node){
+			ResultPage.setAttribute('id','overflow')
+			allPage.style.height='auto'
+			
 		}else{
-			ResultPage.style.overflow='hidden'
+			ResultPage.removeAttribute('id','overflow')
+			allPage.style.height='100vh'
 		}
 	}
 
