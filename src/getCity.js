@@ -59,6 +59,17 @@ class GetCity extends React.Component{
 		})
 	}
 	
+	handleWheel(){
+		var aslide = document.getElementById('sildeCode')
+		if(document.body.scrollTop>200){
+			aslide.style.opacity = 1
+			aslide.style.height = "92vh"
+		}else{
+			aslide.style.opacity = 0
+			aslide.style.height = 0
+		}
+	}
+
 	onClickHandler(event){
 		let liArr=document.getElementsByClassName('cityList')
 		let newLi = liArr[0].childNodes
@@ -68,15 +79,16 @@ class GetCity extends React.Component{
 				location.push(index)
 			}
 		})
+		if(location.length<1) return;
 		let searchCity = newLi[location[0]].getElementsByTagName('div')
 		window.scrollTo(0,searchCity[0].offsetTop)
 	}
 
 	render(){
 		return(
-			<div id='cityName'>
+			<div id='cityName' onWheel={this.handleWheel.bind(this)} onTouchMove={this.handleWheel.bind(this)}>
 				<InputCity city={this.state.city}/>
-				<div className='sildeCode'>
+				<div className='sildeCode' id='sildeCode'>
 					<ul>
 						{this.state.allWord.map((value,index)=>{
 							return <li key={index} onClick={this.onClickHandler.bind(this)}>{value.toUpperCase()}</li>

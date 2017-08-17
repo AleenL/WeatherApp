@@ -56,6 +56,7 @@ class InputCity extends React.Component{
 			<div className='searchPage'>
 				<input type='text'
 				className = 'GetCity'
+				placeholder='搜索你要找的城市'
 				onChange = {this.changeTitle.bind(this)}/>
 				<div id='getString'>
 					<GetTwon getCity={this.state.getCity}/>

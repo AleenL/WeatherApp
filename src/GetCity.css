@@ -2,6 +2,7 @@
 	width: 100%;
 	list-style: none;
 	background: #fafafa;
+	position: relative;
 }
 
 
@@ -47,12 +48,14 @@
 }
 
 #cityName .sildeCode {
-	margin-top: 7vh;
+	top: 5vh;
 	position: fixed;
 	right: 0;
 	width: 1rem;
-	height: 92vh;
+	height: 90vh;
 	overflow: hidden;
+	opacity: 0;
+	transition: opacity 0.35s ease-in
 }
 
 #cityName .sildeCode ul{
@@ -62,5 +65,5 @@
 #cityName .sildeCode ul li{
 	font-size: .7rem;
 	height: 3.9%;
-	color: rgba(0,0,0,.5);
+	color: rgba(0,0,0,.2);
 }
