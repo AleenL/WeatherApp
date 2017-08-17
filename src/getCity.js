@@ -59,15 +59,15 @@ class GetCity extends React.Component{
 	render(){
 		return(
 			<div id='cityName'>
-				{/*{this.state.city.map(function(value,index){
+				{this.state.city.map(function(value,index){
 					return(
 						<li key={index} >
 							<div className='cityItems' onClick={this.changeHeight.bind(this)}>{value.city}</div>
 							<GetTwonByChoose town={value.town}/>
 						</li>		
 						)
-					},this)}*/}
-				<InputCity city={this.state.city}/>
+					},this)}
+				{/*<InputCity city={this.state.city}/>*/}
 			</div>
 			
 		)

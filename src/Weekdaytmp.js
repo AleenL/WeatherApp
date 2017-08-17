@@ -50,7 +50,7 @@ class WeekdayEN extends React.Component{
 	// }
 
 	render(){
-		return <p onClick={this.changeName.bind(this)}>{this.state.name}°</p>	
+		return <p onClick={this.changeName.bind(this)}>{this.state.tmp}°</p>	
 	}
 }
 

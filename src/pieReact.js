@@ -72,9 +72,14 @@ class PieReact extends Component {
         ],
         series : [
             {
-                name:'最高气温',
+                name:'气温',
                 type:'line',
                 data:data,
+                itemStyle:{
+                	normal:{
+                		color:'rgba(255,255,255,.4)'
+                	}
+                }
             }]
         });
     }
