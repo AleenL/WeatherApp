@@ -69,7 +69,6 @@ class GetCity extends React.Component{
 			}
 		})
 		let searchCity = newLi[location[0]].getElementsByTagName('div')
-		console.log(parseInt(searchCity[0].offsetTop))
 		window.scrollTo(0,searchCity[0].offsetTop)
 	}
 
