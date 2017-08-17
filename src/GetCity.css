@@ -15,7 +15,7 @@
 	color: #ccc;
 }
 
-#cityName li ul{
+#cityName li ul,searchPage #getString .resultTown{
 	background: #fff;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -28,7 +28,7 @@
 	padding-bottom: 1rem ;
 }
 
-#cityName li ul li{
+#cityName li ul li,.searchPage #getString .resultTown ul li{
 	width: 33.33%;
 	margin-top: 1rem;
 	float: left;
@@ -36,7 +36,7 @@
 	text-align: center;
 }
 
-#cityName li ul li p{
+#cityName li ul li p,.searchPage #getString .resultTown ul li p{
 	width: 75%;
 	height: 2rem;
 	display: inline-block;

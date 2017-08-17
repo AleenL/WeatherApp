@@ -56,10 +56,11 @@ class GetTwon extends React.Component{
 		return(
 			<ul>
 				{this.state.getTwon.map(function(value,index){
-					return (<li key={index} 
-							className={value.replace(/[^A-Za-z]/gi,"")}
-							onClick={this.getWeather.bind(this)}
-							><p>{value.replace(/[^\u4e00-\u9fa5]/gi,"")}</p></li>)
+					return (<li key={index} >
+								<p onClick={this.getWeather.bind(this)}
+								className={value.replace(/[^A-Za-z]/gi,"")}>
+								{value.replace(/[^\u4e00-\u9fa5]/gi,"")}</p>
+							</li>)
 				},this)}
 			</ul>
 		)

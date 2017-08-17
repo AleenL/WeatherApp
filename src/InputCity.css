@@ -1,13 +1,18 @@
-.searchPage{
+.searchPage .searchBar{
 	width: 100%;
-	height: 200px;
+	height: 30vh;
 	background: url(https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3664485651,540016694&fm=26&gp=0.jpg) no-repeat;
 	background-size: cover;
 	text-align: center;
+	
+}
+
+.searchPage{
+	position: relative;
 }
 
 .searchPage input{
-	width: 80%;
+	width: 70%;
 	height: 5vh;
 	border-radius: 15px;
 	outline: none;
@@ -16,4 +21,27 @@
 	margin-top: 1.5vh;
 	text-align: center;
 	padding-left: 1rem;
+}
+
+.searchPage #getString{
+	width: 100%;
+	height: 70vh;
+	position: absolute;
+	z-index: 5;
+	overflow: hidden;
+}
+
+.searchPage #getString .result p{
+	line-height: 2rem;
+	height: 4vh;
+	font-size: .8rem;
+	color: #ccc;
+	padding-left: 1rem;
+	background: #fafafa;
+}
+
+.searchPage #getString .resultTown{
+	height: calc(94vh-1rem);
+	background: #fff;
+	overflow: scroll;
 }

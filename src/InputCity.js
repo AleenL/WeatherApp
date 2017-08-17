@@ -10,14 +10,32 @@ class InputCity extends React.Component{
 			getCity: []
 		}
 	}
+	
+	componentDidMount() {
+		let inputNode = document.getElementById('searchBar')
+		this.removeResult(inputNode.childNodes[0].value)
+	}
+
+	removeResult(node){
+		let ResultPage = document.getElementsByClassName('searchPage')[0]
+		if(node){
+			ResultPage.style.overflow='visible'
+		}else{
+			ResultPage.style.overflow='hidden'
+		}
+	}
 
 	changeTitle(event){
-		var newArr = []
+		this.removeResult(event.target.value)
+		let newArr = [],beforeArr=[],afterArr=[]
 		this.preOrder(this.state.city,event.target.value,newArr)
-		console.log(newArr)
+		beforeArr = new Set(newArr)
+		for(let e of beforeArr){
+			afterArr.push(e)
+		}
 		if(newArr.length !== 0){
 			this.setState({
-				getCity: newArr
+				getCity: afterArr
 			})
 		}
 		if(event.target.value.length === 0 ){
@@ -43,7 +61,6 @@ class InputCity extends React.Component{
 				return arr
 			}
 			if(newValue[0].replace(/[^a-zA-Z]/gi,"").substring(0,value.length) === value.substring(0,value.length)){
-				console.log(newValue[0].replace(/[^a-zA-Z]/gi,"").substring(0,value.length),value.substring(0,value.length))
 				if(newValue[0].split(",").length > 2) return false;
 				arr.push(newValue[0])
 				return arr
@@ -54,12 +71,20 @@ class InputCity extends React.Component{
 	render() {
 		return (
 			<div className='searchPage'>
-				<input type='text'
-				className = 'GetCity'
-				placeholder='搜索你要找的城市'
-				onChange = {this.changeTitle.bind(this)}/>
+				<div className='searchBar' id='searchBar'>
+					<input type='text'
+					className = 'GetCity'
+					placeholder='搜索你要找的城市'
+					onChange = {this.changeTitle.bind(this)}/>	
+				</div>
+				
 				<div id='getString'>
-					<GetTwon getCity={this.state.getCity}/>
+					<div className='result'>
+						<p>搜索结果</p>
+					</div>
+					<div className='resultTown'>
+						<GetTwon getCity={this.state.getCity}/>
+					</div>
 				</div>			
 			</div>
 		) 
