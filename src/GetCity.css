@@ -17,15 +17,6 @@
 }
 
 #cityName li ul{
-	/* display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	list-style: none;
-	justify-content: space-between;
-	align-items: center;
-	flex-direction: column; */
 	background: #fff;
 	padding-bottom: 1.2rem;
 	padding-left: 1.5rem;
@@ -44,3 +35,18 @@
 	font-size: .8rem;
 	color: rgba(22,22,22,.8);
 }
+
+#cityName .sildeCode {
+	position: absolute;
+	top: 10%;
+	right: 0.2rem;
+}
+
+#cityName .sildeCode ul li{
+	font-size: 1rem;
+	color: #ccc;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	text-align: center;
+	width: 2rem;
+	list-style: none;}

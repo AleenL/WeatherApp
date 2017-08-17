@@ -41,23 +41,22 @@ class GetCity extends React.Component{
 			{city:'宁夏N',town:[['银川','yinchuan'],['吴忠','wuzhong'],['中卫','zhongwei'],['石嘴山','shizuishan'],['固原','guyuan']]},
 			{city:'海南H',town:[['三亚','sanya'],['海口','haikou'],['琼海','qionghai'],['文昌','wenchang'],['东方','dongfang'],['五指山','wuzhishan'],['万宁','wangning']]},
 		 	],
-		 FirstWord:[]
+		 FirstWord:[],
+		 allWord:["a","b",'c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 		}
 	}
 	
 	componentDidMount() {
-		let [oldArr,newArr] = [[],[]]
+		let [oldArr,newArr,liArr] = [[],[],document.getElementsByClassName('sildeCode')]
+		let newLi = liArr[0].childNodes[0].childNodes
 		this.state.city.map((value,index)=>{
 			if(value.city.replace(/[^a-zA-Z]/gi,"").length==0) return;
-			oldArr.push(value.city.replace(/[^a-zA-Z]/gi,""))
+			for(let i=0;i<newLi.length;i++){
+				if(newLi[i].innerText == value.city.replace(/[^a-zA-Z]/gi,"")){
+					newLi[i].style.color='#000'
+				}
+			}
 		})
-		oldArr = new Set(oldArr)
-		for(let e of oldArr){
-			this.setState({
-				firstWord:this.state.FirstWord.push(e)
-			})
-		}
-
 	}
 	
 	onClickHandler(event){
@@ -69,8 +68,8 @@ class GetCity extends React.Component{
 			<div id='cityName'>
 				<div className='sildeCode'>
 					<ul>
-						{this.state.FirstWord && this.state.FirstWord.map((value,index)=>{
-							return <li key={index} onClick={this.onClickHandler.bind(this)}>{value}</li>
+						{this.state.allWord.map((value,index)=>{
+							return <li key={index} onClick={this.onClickHandler.bind(this)}>{value.toUpperCase()}</li>
 						},this)}
 					</ul>
 				</div>
