@@ -11,7 +11,7 @@
 #cityName li .cityItems{
 	width: 100%;
 	line-height: 2rem;
-	font-size: 1rem;
+	font-size: .8rem;
 	text-indent: 1rem;
 	color: #ccc;
 }
@@ -38,9 +38,9 @@
 	display: inline-block;
 	height: 2rem;
 	line-height: 2rem;
-	border: 1px solid rgba(22,22,22,.4);
+	border: 1px solid rgba(22,22,22,.1);
 	border-radius: 20px;
 	text-align: center;
-	font-size: 1.0rem;
+	font-size: .8rem;
 	color: rgba(22,22,22,.8);
 }

@@ -9,6 +9,7 @@ class GetCity extends React.Component{
 		super(props);
 		this.state={
 		 city:[
+		 	{city:'热门城市',town:[['北京','beijing'],['上海','shanghai'],['重庆','chongqing'],['广州','guangzhou'],['西安','xian'],['成都','chengdu'],['长沙','changsha'],['厦门','xiamen'],['苏州','suzhou']]},
 		 	{city:'北京',town:[['北京','beijing'],['朝阳','chaoyang'],['房山','fangshan'],['怀柔','huairou'],['石景山','shijingshan'],['通州','tongzhou'],['延庆','yanqing'],['密云','miyun'],['平谷','pinggu']]},
 			{city:'上海',town:[['上海','shanghai'],['浦东','pudong'],['金山','jinshan'],['嘉定','jiading'],['奉贤','fengxian'],['闵行','minhang'],['宝山','baoshan'],['浦东南汇','pudongnanhui'],['徐家汇','xujiahui'],['青浦','qingpu']]},
 			{city:'重庆',town:[['重庆','chongqing'],['武隆','wulong'],['石柱','shizhu'],['秀山','xiushan'],['渝中','yuzhong'],['巴南','banan'],['酉阳','youyang'],['开县','kaixian'],['丰都','fengdu'],['渝北','yubei'],['璧山','bishan'],['垫江','dianjiang'],['大足','dazu'],['巫溪','wuxi']]},
