@@ -51,9 +51,12 @@ class GetTwonByChoose extends React.Component{
 		return (
 			<ul>
 			{this.state.town.map(function(value,index){
-				return <li key={index} className={value[1]} 
-							onClick={this.getWeather.bind(this)}
-						>{value[0]}</li>
+				return (<li key={index}>
+							<p 	onClick={this.getWeather.bind(this)}
+								className={value[1]} 
+							>{value[0]}</p>
+						</li>
+					)
 			},this)}
 			</ul>
 		)

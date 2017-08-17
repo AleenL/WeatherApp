@@ -59,7 +59,7 @@ class GetTwon extends React.Component{
 					return (<li key={index} 
 							className={value.replace(/[^A-Za-z]/gi,"")}
 							onClick={this.getWeather.bind(this)}
-							>{value.replace(/[^\u4e00-\u9fa5]/gi,"")}</li>)
+							><p>{value.replace(/[^\u4e00-\u9fa5]/gi,"")}</p></li>)
 				},this)}
 			</ul>
 		)

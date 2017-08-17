@@ -60,7 +60,10 @@ class GetCity extends React.Component{
 	}
 	
 	onClickHandler(event){
-		console.log(event.innerHTML)
+		let liArr=document.getElementsByClassName('cityList')
+		let newLi = liArr[0].childNodes
+		let searchCity = newLi.childNodes[0]
+
 	}
 
 	render(){
@@ -73,6 +76,7 @@ class GetCity extends React.Component{
 						},this)}
 					</ul>
 				</div>
+				<ul className='cityList'>
 				{this.state.city.map(function(value,index){
 					return(
 						<li key={index} >
@@ -81,6 +85,7 @@ class GetCity extends React.Component{
 						</li>		
 						)
 					})}
+				</ul>
 				{/*<InputCity city={this.state.city}/>*/}
 			</div>
 			
