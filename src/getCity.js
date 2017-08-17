@@ -75,6 +75,7 @@ class GetCity extends React.Component{
 	render(){
 		return(
 			<div id='cityName'>
+				<InputCity city={this.state.city}/>
 				<div className='sildeCode'>
 					<ul>
 						{this.state.allWord.map((value,index)=>{
@@ -92,7 +93,7 @@ class GetCity extends React.Component{
 						)
 					})}
 				</ul>
-				{/*<InputCity city={this.state.city}/>*/}
+				
 			</div>
 			
 		)
