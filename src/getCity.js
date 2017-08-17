@@ -40,24 +40,48 @@ class GetCity extends React.Component{
 			{city:'四川S',town:[['成都','chengdu'],['绵阳','mianyang'],['广元','guangyuan'],['达州','dazhou'],['南充','nanchong'],['德阳','deyang'],['广安','guangan'],['阿坝','aba'],['巴中','bazhong'],['遂宁','suining'],['内江','neijiang'],['凉山','liangshan'],['攀枝花','panzhihua'],['乐山','leshan'],['自贡','zigong'],['泸州','luzhou'],['雅安','yaan'],['宜宾','yibing'],['资阳','ziyang'],['眉山','meishan'],['甘孜','ganzi']]},
 			{city:'宁夏N',town:[['银川','yinchuan'],['吴忠','wuzhong'],['中卫','zhongwei'],['石嘴山','shizuishan'],['固原','guyuan']]},
 			{city:'海南H',town:[['三亚','sanya'],['海口','haikou'],['琼海','qionghai'],['文昌','wenchang'],['东方','dongfang'],['五指山','wuzhishan'],['万宁','wangning']]},
-		 	]
+		 	],
+		 FirstWord:[]
 		}
 	}
 	
+	componentDidMount() {
+		let [oldArr,newArr] = [[],[]]
+		this.state.city.map((value,index)=>{
+			if(value.city.replace(/[^a-zA-Z]/gi,"").length==0) return;
+			oldArr.push(value.city.replace(/[^a-zA-Z]/gi,""))
+		})
+		oldArr = new Set(oldArr)
+		for(let e of oldArr){
+			this.setState({
+				firstWord:this.state.FirstWord.push(e)
+			})
+		}
+
+	}
 	
-	
+	onClickHandler(event){
+		console.log(event.innerHTML)
+	}
 
 	render(){
 		return(
 			<div id='cityName'>
+				<div className='sildeCode'>
+					<ul>
+						{this.state.FirstWord && this.state.FirstWord.map((value,index)=>{
+							return <li key={index} onClick={this.onClickHandler.bind(this)}>{value}</li>
+						},this)}
+					</ul>
+				</div>
 				{this.state.city.map(function(value,index){
 					return(
 						<li key={index} >
-							<div className='cityItems' >{value.city}</div>
+							<div className='cityItems' >{value.city.replace(/[^\u4e00-\u9fa5]/gi,"")}</div>
 							<GetTwonByChoose town={value.town}/>
 						</li>		
 						)
-					},this)}
+					})}
 				{/*<InputCity city={this.state.city}/>*/}
 			</div>
 			
