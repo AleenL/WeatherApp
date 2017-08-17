@@ -30,13 +30,25 @@ class GetLocation extends React.Component{
 				day5:" ",
 				day6:" "
 			},
-			hours:null
+			hours:null,
+			data:this.props.data,
+			local:this.props.data
 		}
 	}
 
-	componentDidMount() {
-		this.getLocation()
+	componentDidUpdate(nextProps) {
+		
+		if(this.props.data !== nextProps.data){
+			this.setState({
+				data:this.props.data
+			})
+			this.getCityId(this.state.data)
+		}
 	}
+
+	/*componentDidMount() {
+		this.getCityId(this.state.data)
+	}*/
 
 	getLocation(){
 		let that = this;
@@ -53,8 +65,14 @@ class GetLocation extends React.Component{
 
 	getCityId(data){
 		let that = this;
-		var CityId = new Ajax('https://weixin.jirengu.com/weather/cityid','get',{location:data.data},true)
+		let CityId;
+		if(data){
+			CityId = new Ajax('https://weixin.jirengu.com/weather/cityid','get',{location:data.data},true)
+		}else{
+			CityId = new Ajax('https://weixin.jirengu.com/weather/cityid','get',{location:this.state.data},true)
+		}
 		CityId.getMsg().then(function(data){
+			console.log(data)
 			that.getWeather(data.results[0].id)
 			that.getHours(data.results[0].id)
 		},function(error){
@@ -66,9 +84,11 @@ class GetLocation extends React.Component{
 	}
 
 	getHours(data){
+		
 		let that = this;
-		var CityId = new Ajax('https://weixin.jirengu.com/weather/future24h','get',{cityid:data},true)
+		let CityId = new Ajax('https://weixin.jirengu.com/weather/future24h','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
+			console.log(result)
 			that.setState({
       		 	hours:result.hourly  		 
       		 })
@@ -81,8 +101,9 @@ class GetLocation extends React.Component{
 	}
 
 	getWeather(data){
+		
 		let that = this;
-		var CityId = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:data},true)
+		let CityId = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
 			that.setState({
       		 	tmp: result.weather[0].now.temperature,
@@ -106,34 +127,7 @@ class GetLocation extends React.Component{
 	}
 
 	render(){
-		const About = () =>(
-			<NextWeekTmp day={this.state.future} />
-		)
-		
-		const Home = () =>(
-			<NextWeekWeather day={this.state.future} />
-		)
-
-		const Message = () =>(
-			<WeatherEN weather={this.state.future.day2} />
-		)
-
-		return (
-			<div className='titleText'>
-				<p>{this.state.tmp}<span>°</span></p>
-				<Feel tmp={this.state.tmp} />
-				<div>
-					<GetHoursWea weather={this.state.hours}/>
-				</div>
-				<HashRouter>
-    				<Futureweather weather={[this.state.today,this.state.future]}>
-        				<Route exact path="/Home" component={Home} />
-        				<Route path="/about" component={About} />
-        				<Route path="/Message" component={Message} />
-    				</Futureweather>
-  				</HashRouter>
-			</div>
-		)
+		return <p></p>
 	}
 }
 

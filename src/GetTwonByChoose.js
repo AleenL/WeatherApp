@@ -1,15 +1,17 @@
 import React from 'react'
 import Ajax from './Ajax'
+import GetWeather from './GetWeather'
 
 class GetTwonByChoose extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-			town:this.props.town
+			town:this.props.town,
+			data:null
 		}
 	}
 	
-	getWeather(event){
+/*	getWeather(event){
 
 		//获取城市的拼音值和汉字值
 		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
@@ -45,20 +47,30 @@ class GetTwonByChoose extends React.Component{
 				)
 			}
 		}
+	}*/
+	getWeather(event){
+		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
+		this.setState({
+			data:en
+		})
 	}
+
+	
 
 	render(){
 		return (
 			<ul>
-			{this.state.town.map(function(value,index){
-				return (<li key={index}>
-							<p 	onClick={this.getWeather.bind(this)}
+			{this.state.town.map((value,index) => {
+				return (<li key={index} >
+							<p  onClick={this.getWeather.bind(this)}
 								className={value[1]} 
 							>{value[0]}</p>
 						</li>
 					)
-			},this)}
+			})}
+			{this.state.data && <GetWeather data={this.state}/>}
 			</ul>
+
 		)
 	}
 }

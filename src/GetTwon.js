@@ -1,12 +1,14 @@
 import React from 'react'
 import Ajax from './Ajax'
+import GetWeather from './GetWeather'
 
 
 class GetTwon extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-			getTwon:this.props.getCity
+			getTwon:this.props.getCity,
+			data:null,
 		}
 	}
 
@@ -16,7 +18,7 @@ class GetTwon extends React.Component{
 		}
 	}
 
-	getWeather(event){
+	/*getWeather(event){
 		//获取城市的拼音值和汉字值
 		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
 		//获取城市ID
@@ -50,8 +52,15 @@ class GetTwon extends React.Component{
 				)
 			}
 		}
+	}*/
+	
+	getWeather(event){
+		let [that,en,ch] = [this,event.target.getAttribute('class'),ch=event.target.innerText]
+		this.setState({
+			data:en
+		})
 	}
-
+	
 	render(){
 		return(
 			<ul>
