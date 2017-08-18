@@ -35,25 +35,15 @@ class GetLocation extends React.Component{
 			local:this.props.data
 		}
 	}
-
-	componentDidUpdate(nextProps) {
-		
-		if(this.props.data !== nextProps.data){
-			this.setState({
-				data:this.props.data
-			})
-			this.getCityId(this.state.data)
-		}
+	componentWillReceiveProps(nextProps) {
+		this.getCityId(nextProps)
 	}
-
-	/*componentDidMount() {
-		this.getCityId(this.state.data)
-	}*/
 
 	getLocation(){
 		let that = this;
 		const Location = new Ajax('https://weixin.jirengu.com/weather/ip','get')
 		Location.getMsg().then(function(data){
+
 			that.getCityId(data)
 		},function(error){
 			//未获取到就返回失败
@@ -79,16 +69,14 @@ class GetLocation extends React.Component{
 			//未获取到就返回失败
 			console.log('失败')
 		}).catch(function(Error){
-			console.log('Error')
+			console.error(Error)
 		})
 	}
 
-	getHours(data){
-		
+	getHours(data){	
 		let that = this;
 		let CityId = new Ajax('https://weixin.jirengu.com/weather/future24h','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
-			console.log(result)
 			that.setState({
       		 	hours:result.hourly  		 
       		 })
@@ -101,10 +89,10 @@ class GetLocation extends React.Component{
 	}
 
 	getWeather(data){
-		
 		let that = this;
 		let CityId = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
+			console.log(result)
 			that.setState({
       		 	tmp: result.weather[0].now.temperature,
       		 	city: result.weather[0].city_name,

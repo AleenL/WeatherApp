@@ -10,7 +10,7 @@ class GetCity extends React.Component{
 		this.state={
 		 city:[
 		 	{city:'热门城市',town:[['北京','beijing'],['上海','shanghai'],['重庆','chongqing'],['广州','guangzhou'],['西安','xian'],['成都','chengdu'],['长沙','changsha'],['厦门','xiamen'],['苏州','suzhou']]},
-		 	{city:'安徽A',town:[['芜湖','wuhu'],['合肥','hefei'],['六安','liuan'],['宿州','suzhou'],['阜阳','huyang'],['安庆','anqing'],['马鞍山','maanshan'],['蚌埠','fenghu'],['淮北','huaibei'],['淮南','huainan'],['宣城','xuancheng'],['黄山','huangshan'],['铜陵','tongling'],['亳州','haozhou'],['池州','chizhou'],['巢湖','chaohu'],['滁州','chuzhou']]},
+		 	{city:'安徽A',town:[['芜湖','wuhu'],['合肥','hefei'],['宿州','suzhou'],['阜阳','huyang'],['安庆','anqing'],['马鞍山','maanshan'],['蚌埠','fenghu'],['淮北','huaibei'],['淮南','huainan'],['宣城','xuancheng'],['黄山','huangshan'],['铜陵','tongling'],['亳州','haozhou'],['池州','chizhou'],['巢湖','chaohu'],['滁州','chuzhou']]},
 		 	{city:'北京B',town:[['北京','beijing'],['朝阳','chaoyang'],['房山','fangshan'],['怀柔','huairou'],['石景山','shijingshan'],['通州','tongzhou'],['延庆','yanqing'],['密云','miyun'],['平谷','pinggu']]},
 		 	{city:'重庆C',town:[['重庆','chongqing'],['武隆','wulong'],['石柱','shizhu'],['秀山','xiushan'],['渝中','yuzhong'],['巴南','banan'],['酉阳','youyang'],['开县','kaixian'],['丰都','fengdu'],['渝北','yubei'],['璧山','bishan'],['垫江','dianjiang'],['大足','dazu'],['巫溪','wuxi']]},
 		 	{city:'福建F',town:[['漳州','zhangzhou'],['泉州','quanzhou'], ['厦门','xiamen'],['福州','fuzou'],['莆田','putian'], ['宁德','ningde'],['三明','sanming'],['南平','nanping'],['龙岩','longyan']]},
@@ -38,7 +38,7 @@ class GetCity extends React.Component{
 			{city:'四川S',town:[['成都','chengdu'],['绵阳','mianyang'],['广元','guangyuan'],['达州','dazhou'],['南充','nanchong'],['德阳','deyang'],['广安','guangan'],['阿坝','aba'],['巴中','bazhong'],['遂宁','suining'],['内江','neijiang'],['凉山','liangshan'],['攀枝花','panzhihua'],['乐山','leshan'],['自贡','zigong'],['泸州','luzhou'],['雅安','yaan'],['宜宾','yibing'],['资阳','ziyang'],['眉山','meishan'],['甘孜','ganzi']]},
 			{city:'云南Y',town:[['昆明','kunming'],['红河','honghe'],['大理','dali'],['文山','wenshan'],['德宏','dehong'],['曲靖','qujing'],['昭通','zhaotong'],['楚雄','chuxiong'],['保山','baoshan'],['玉溪','yuxi'],['丽江','lijiang'],['临沧','lingcang'],['思茅','simao'],['西双版纳','xishuang'],['怒江','nujiang'],['迪庆','diqing']]},
 			{city:'西藏X',town:[['拉萨','lasa'],['山南','shannan'],['林芝','linzhi'],['日喀则','rikeze'],['阿里','ali'],['昌都','changdu'],['那曲','naqu']]},
-			{city:'新疆X',town:[['乌鲁木齐','wulumuqi'],['伊犁','yili'],['昌吉','changji'],['石河子','shihezi'],['哈密','hami'],['阿克苏','akesu'],['喀什','kashi'],['塔城','tacheng'],['克拉玛依','kelamayi'],['和田','hetian'],['阿勒泰','aleta'],['吐鲁番','tulufan'],['阿拉尔','alaer'],['博尔塔拉','boertala'],['五家渠','wujiaqu'],['克孜勒苏','kezilesu'],['图木舒克','tumushuke']]},
+			{city:'新疆X',town:[['乌鲁木齐','wulumuqi'],['伊犁','yili'],['昌吉','changji'],['石河子','shihezi'],['哈密','hami'],['阿克苏','akesu'],['喀什','kashi'],['塔城','tacheng'],['克拉玛依','kelamayi'],['和田','hetian'],['阿勒泰','aleta'],['吐鲁番','tulufan'],['阿拉尔','alaer'],['五家渠','wujiaqu']]},
 			{city:'浙江Z',town:[['温州','wenzhou'],['宁波','ningbo'],['杭州','hangzhou'],['台州','taizhou'],['嘉兴','jiaxing'],['金华','jinhua'],['湖州','huzhou'],['绍兴','shaoxing'],['舟山','zhoushan'],['丽水','lishui'],['衢州','quzhou']]},		
 		 	],
 		 FirstWord:[],
@@ -69,6 +69,7 @@ class GetCity extends React.Component{
 			aslide.style.height = 0
 		}
 	}
+	
 
 	onClickHandler(event){
 		let liArr=document.getElementsByClassName('cityList')

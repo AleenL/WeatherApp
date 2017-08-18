@@ -64,13 +64,14 @@ class GetTwon extends React.Component{
 	render(){
 		return(
 			<ul>
-				{this.state.getTwon.map(function(value,index){
+				{this.state.getTwon.map((value,index) => {
 					return (<li key={index} >
 								<p onClick={this.getWeather.bind(this)}
 								className={value.replace(/[^A-Za-z]/gi,"")}>
 								{value.replace(/[^\u4e00-\u9fa5]/gi,"")}</p>
 							</li>)
-				},this)}
+				})}
+				{this.state.data && <GetWeather data={this.state.data}/>}
 			</ul>
 		)
 	}

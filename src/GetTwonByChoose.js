@@ -68,9 +68,8 @@ class GetTwonByChoose extends React.Component{
 						</li>
 					)
 			})}
-			{this.state.data && <GetWeather data={this.state}/>}
+			{this.state.data && <GetWeather data={this.state.data}/>}
 			</ul>
-
 		)
 	}
 }
