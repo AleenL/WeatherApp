@@ -22,17 +22,7 @@ class ComponentSetting extends React.Component{
 		return(
 				<div className='settingContent'>
 					{this.state.setting.map((value,index) => {
-						if(index === 0){
-							return(
-								<div className={value.Action} key={index}>
-									<div className='layoutTitle'>
-										<p><i className='iconfont icon-gengduo'></i></p>
-										<p>{value.name}</p>
-									</div>
-								</div>
-							)
-						}
-						if(index === this.length){
+						if(index === this.state.setting.length-1){
 							return(
 								<div className={value.Action} key={index}>
 									<div className='layout'>
@@ -41,7 +31,7 @@ class ComponentSetting extends React.Component{
 								</div>
 							)
 						}
-
+						
 						return(
 							<div className={value.Action} key={index}>
 								<div className='layout'>	

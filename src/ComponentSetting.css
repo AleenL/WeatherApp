@@ -1,7 +1,7 @@
 .settingContent>div{
 	width: 100%;
 	height: 7vh;
-	background: #f3f8f1;
+	background: #fefefe;
 }
 
 
@@ -12,27 +12,13 @@
 	margin-bottom: .8rem;
 }
 
-.settingTitle .layoutTitle{
-	width: 95%;
-	margin: 0 auto;
-	line-height: 7vh;
+.settingContent>div:nth-child(2n+2) .layout{
+	border-bottom: 1px solid rgba(22,22,22,.2);
+}
+.settingContent>div:nth-child(8) .layout{
+	border: none;
 }
 
-.settingTitle .layoutTitle p:first-child{
-	float: left;
-	transform: rotateZ(180deg);
-	-webkit-transform: rotateZ(180deg);
-	-moz-transform: rotateZ(180deg);
-}
-
-.settingTitle .layoutTitle p:first-child i{
-	font-size: 1.2rem;
-}
-
-.settingTitle .layoutTitle p:nth-child(2){
-	text-align: center;
-	font-size: 1.2rem
-}
 
 .layout{
 	width: 95%;
@@ -57,4 +43,26 @@
 }
 .settingContent>div:nth-child(8) .layout p{
 	color: rgba(215,22,22,.8)
+}
+.settingTitle .layout:first-child{
+	display: block;
+	position: relative;
+}
+.settingTitle .layout:first-child p:nth-child(2){
+	position: absolute;
+	top: 50%;
+	margin-top: -0.8rem;
+	transform: rotateZ(180deg);
+	-webkit-transform: rotateZ(180deg);
+	-moz-transform: rotateZ(180deg);
+}
+
+.settingTitle .layout:first-child p:nth-child(2) i{
+	font-size: 1.2rem;
+}
+
+.settingTitle .layout:first-child p:nth-child(1){
+	text-align: center;
+	font-size: 1.2rem;
+	line-height: 7vh
 }
