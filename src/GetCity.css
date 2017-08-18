@@ -1,12 +1,25 @@
 #cityName{
 	width: 100%;
 	list-style: none;
-	background: #fafafa;
+	background: #d7ecf1;
 	position: relative;
 	overflow: hidden;
 }
 
+.goTop{
+	position: fixed;
+	bottom: 2vh;
+	right: 5vh;
 
+}
+
+.goTop i{
+	font-size: 2rem;
+	color: rgba(0,0,0,.4);
+	height: 2rem;
+	opacity: 0;
+	transition: opacity 0.35s ease-in
+}
 
 #cityName li .cityItems{
 	width: 100%;
@@ -17,7 +30,7 @@
 }
 
 #cityName li ul,searchPage #getString .resultTown{
-	background: #fff;
+	background: #f3f8f1;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;

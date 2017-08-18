@@ -1,0 +1,60 @@
+.settingContent>div{
+	width: 100%;
+	height: 7vh;
+	background: #f3f8f1;
+}
+
+
+.settingContent>div:nth-child(2),.settingContent>div:nth-child(4),.settingContent>div:nth-child(8){
+	margin-top: .8rem;
+}
+.settingContent>div:nth-child(3),.settingContent>div:nth-child(5){
+	margin-bottom: .8rem;
+}
+
+.settingTitle .layoutTitle{
+	width: 95%;
+	margin: 0 auto;
+	line-height: 7vh;
+}
+
+.settingTitle .layoutTitle p:first-child{
+	float: left;
+	transform: rotateZ(180deg);
+	-webkit-transform: rotateZ(180deg);
+	-moz-transform: rotateZ(180deg);
+}
+
+.settingTitle .layoutTitle p:first-child i{
+	font-size: 1.2rem;
+}
+
+.settingTitle .layoutTitle p:nth-child(2){
+	text-align: center;
+	font-size: 1.2rem
+}
+
+.layout{
+	width: 95%;
+	height: 100%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.settingContent p{
+	font-size: 1rem;
+	color: rgba(23,12,41,.7);
+}
+
+.settingContent p i{
+	color: rgba(23,12,41,.4);
+	font-size: .8rem;
+}
+.settingContent>div:nth-child(8) .layout{
+	justify-content: center;
+	
+}
+.settingContent>div:nth-child(8) .layout p{
+	color: rgba(215,22,22,.8)
+}

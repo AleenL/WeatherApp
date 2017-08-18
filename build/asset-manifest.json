@@ -1,10 +1,14 @@
 {
-  "main.css": "static/css/main.5de8a4d8.css",
-  "main.css.map": "static/css/main.5de8a4d8.css.map",
-  "main.js": "static/js/main.2a482cdb.js",
-  "main.js.map": "static/js/main.2a482cdb.js.map",
+  "main.css": "static/css/main.4254a275.css",
+  "main.css.map": "static/css/main.4254a275.css.map",
+  "main.js": "static/js/main.4c6d474e.js",
+  "main.js.map": "static/js/main.4c6d474e.js.map",
   "static/media/Blood.png": "static/media/Blood.11bff43a.png",
   "static/media/Moon.png": "static/media/Moon.21c990af.png",
   "static/media/Sun.png": "static/media/Sun.929b6259.png",
+  "static/media/iconfont.eot?t=1501754609894": "static/media/iconfont.cad23ef8.eot",
+  "static/media/iconfont.svg?t=1501754609894": "static/media/iconfont.f34ce724.svg",
+  "static/media/iconfont.ttf?t=1501754609894": "static/media/iconfont.bdb42056.ttf",
+  "static/media/iconfont.woff?t=1501754609894": "static/media/iconfont.7e289457.woff",
   "static/media/newFont.ttf": "static/media/newFont.575e6ae8.ttf"
 }

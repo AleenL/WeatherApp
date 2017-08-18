@@ -60,14 +60,26 @@ class GetCity extends React.Component{
 	}
 	
 	handleWheel(){
-		var aslide = document.getElementById('sildeCode')
-		if(document.body.scrollTop>200){
-			aslide.style.opacity = 1
-			aslide.style.height = "92vh"
+		var aslide = document.getElementById('sildeCode'),
+			goTopBtn = document.getElementsByClassName('icon-huidaodingbu')[0]
+		if(document.body.scrollTop>250){
+			this.showNode([aslide,goTopBtn],['92vh','2rem'])
 		}else{
-			aslide.style.opacity = 0
-			aslide.style.height = 0
+			this.hideNode([aslide,goTopBtn])
 		}
+	}
+
+	showNode(node,height){
+		node.forEach((e,index)=>{
+			e.style.opacity = 1
+			e.style.height = height[index]
+		})
+	}
+
+	hideNode(node){
+		node.forEach((e)=>{
+			e.style.opacity = 0
+		})
 	}
 	
 
@@ -85,6 +97,12 @@ class GetCity extends React.Component{
 		window.scrollTo(0,searchCity[0].offsetTop)
 	}
 
+	GoTop(event){
+		var aslide = document.getElementById('sildeCode')
+		window.scrollTo(0,0)
+		this.hideNode([aslide,event.target])
+	}
+
 	render(){
 		return(
 			<div id='cityName' onWheel={this.handleWheel.bind(this)} onTouchMove={this.handleWheel.bind(this)}>
@@ -93,11 +111,19 @@ class GetCity extends React.Component{
 					<ul>
 						{this.state.allWord.map((value,index)=>{
 							return <li key={index} onClick={this.onClickHandler.bind(this)}>{value.toUpperCase()}</li>
-						},this)}
+						})}
 					</ul>
 				</div>
 				<ul className='cityList'>
 				{this.state.city.map(function(value,index){
+					if(index === 0){
+						return(
+						<li key={index} >
+							<div className='cityItems' data-location={value.city.replace(/[^a-zA-Z]/gi,"")}><i className='iconfont icon-unie60c' style={{fontSize:'.6rem'}}></i>{value.city.replace(/[^\u4e00-\u9fa5]/gi,"")}</div>
+							<GetTwonByChoose town={value.town}/>
+						</li>		
+						)
+					}
 					return(
 						<li key={index} >
 							<div className='cityItems' data-location={value.city.replace(/[^a-zA-Z]/gi,"")}>{value.city.replace(/[^\u4e00-\u9fa5]/gi,"")}</div>
@@ -106,7 +132,7 @@ class GetCity extends React.Component{
 						)
 					})}
 				</ul>
-				
+				<div className='goTop'><i className='iconfont icon-huidaodingbu' onClick={this.GoTop.bind(this)}></i></div>
 			</div>
 			
 		)
