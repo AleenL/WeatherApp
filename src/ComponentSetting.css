@@ -48,7 +48,7 @@
 	justify-content: center;
 	
 }
-.settingContent>div:nth-child(8) .layout p {
+.settingContent>div:nth-child(8) .layout p a{
 	color: rgba(215,22,22,.8);
 	text-decoration: none
 }

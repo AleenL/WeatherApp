@@ -1,0 +1,22 @@
+.UserAccount{
+	height: 7vh;
+	background: rgba(255,255,255,.4);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	-ms-align-items: center;
+	align-items: center;
+	padding: 0 1.2rem;
+}
+
+.UserAccount p,.UserAccount p i{
+	font-size: 0.8rem;
+	color: rgba(25,25,25,.6);
+}
+
+.UserAccount p i{
+	margin-left: 0.2rem
+}

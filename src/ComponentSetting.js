@@ -41,7 +41,7 @@ class ComponentSetting extends React.Component{
 					<Route exact path='/Setting' component={Home}/>
 					{this.state.url.map((value,index) => {
 						const url = '/Setting/'+value
-						return <Route path={url} component={hello}/>
+						return <Route key={index} path={url} component={hello}/>
 					})}
 				</Switch>
 			</div>
@@ -50,9 +50,12 @@ class ComponentSetting extends React.Component{
 	}
 
 const hello = ({location}) =>(
-	<div className='userAction'>
-		<p><Link to='/Setting'><i className='iconfont icon-gengduo'></i></Link></p>
-		<p>{location.state.number}</p>
+	<div>
+		<div className='userAction'>
+			<p><Link to='/Setting'><i className='iconfont icon-gengduo'></i></Link></p>
+			<p>{location.state.number}</p>
+		</div>
+		<UserAccount account='784757xxx@qq.com' action={location.state.action} / >
 	</div>
 )
 
