@@ -5,7 +5,26 @@
 	position: relative;
 }
 
+#changePassword i{
+	color: #1abc9c;
+	display: inline-block;
+	
+}
 
+
+#changePassword p:first-child::after{
+	content: '返回';
+	display: block;
+	clear: both;
+	position: absolute;
+	z-index: 10;
+	left: 2rem;
+	color: #1abc9c;
+}
+
+#changePassword p:nth-child(2){
+	color: rgba(0,0,0,0);
+}
 
 .settingContent>div:nth-child(2),.settingContent>div:nth-child(4),.settingContent>div:nth-child(8){
 	margin-top: .8rem;

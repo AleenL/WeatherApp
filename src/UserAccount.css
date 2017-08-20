@@ -20,3 +20,40 @@
 .UserAccount p i{
 	margin-left: 0.2rem
 }
+
+.changePassword{
+	width: 100%;
+	height: 93vh;
+	background: rgba(255,255,255,.8);
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	align-items: center
+}
+.changePassword p:first-child{
+	font-size: 1rem;
+	margin: 1rem 0;
+}
+.changePassword p input{
+	width: 90vw;
+	text-align: left;
+	border: none;
+	height: 3rem;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+	text-indent: 2rem;
+	outline: none;
+	font-size: 0.8rem
+}
+
+.changePassword button{
+	width: 90%;
+	margin-top: 2rem;
+	height: 2rem;
+	line-height: 2rem;
+	background: #1acb9c;
+	border: none;
+	color: rgba(0,0,0,.3);
+}

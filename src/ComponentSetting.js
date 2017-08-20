@@ -51,7 +51,7 @@ class ComponentSetting extends React.Component{
 
 const hello = ({location}) =>(
 	<div>
-		<div className='userAction'>
+		<div className='userAction' id={location.state.action}>
 			<p><Link to='/Setting'><i className='iconfont icon-gengduo'></i></Link></p>
 			<p>{location.state.number}</p>
 		</div>
