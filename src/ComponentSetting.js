@@ -1,49 +1,29 @@
 import React from 'react'
 import './ComponentSetting.css'
+import UserAccount from './UserAccount'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 class ComponentSetting extends React.Component{
-	constructor(props) {
-		super(props);
-		this.state={
-		 setting:[
-			{name:'设置',Action:'settingTitle'},
-			{name:'我的账号',Action:'userAccount'},
-			{name:'修改密码',Action:'changePassword'},
-			{name:'组件设置',Action:'componentSetting'},
-			{name:'主题设置',Action:'colorSetting'},
-			{name:'关于天气',Action:'About'},
-			{name:'意见反馈',Action:'getAdioce'},
-			{name:'退出当前帐号',Action:'loginOut'},
-		 ]
-		}
-	}
-
+	previousLocation = this.props.location
+  	componentWillUpdate(nextProps) {
+	    const { location } = this.props
+	    // set previousLocation if props.location is not modal
+	    if (
+	      nextProps.history.action !== 'POP' &&
+	      (!location.state || !location.state.modal)
+	    ) {
+	      this.previousLocation = this.props.location
+	    }
+	  }
 	render(){
 		return(
-				<div className='settingContent'>
-					{this.state.setting.map((value,index) => {
-						if(index === this.state.setting.length-1){
-							return(
-								<div className={value.Action} key={index}>
-									<div className='layout'>
-										<p>{value.name}</p>
-									</div>
-								</div>
-							)
-						}
-						
-						return(
-							<div className={value.Action} key={index}>
-								<div className='layout'>	
-									<p>{value.name}</p>
-									<p><i className='iconfont icon-gengduo'></i></p>
-								</div>
-							</div>
-						)
-					})}
-				</div>
-		)
-	}	
-}
+				<p>dd</p>	
+			)
+		}	
+	}
 
 export default ComponentSetting

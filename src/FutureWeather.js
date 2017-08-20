@@ -3,12 +3,7 @@ import React, { Component } from 'react';
 import WeatherEN from './weatherEN'
 
 
-import {
-  HashRouter,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
+import { Route,Router,hashHistory } from 'react-router'
 import './FutureWeather.css'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 

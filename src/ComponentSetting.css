@@ -41,8 +41,9 @@
 	justify-content: center;
 	
 }
-.settingContent>div:nth-child(8) .layout p{
-	color: rgba(215,22,22,.8)
+.settingContent>div:nth-child(8) .layout p {
+	color: rgba(215,22,22,.8);
+	text-decoration: none
 }
 .settingTitle .layout:first-child{
 	display: block;
