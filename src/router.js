@@ -18,7 +18,10 @@ class App extends Component {
         <ul>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
-          <li><Link to="/inbox">Inbox</Link></li>
+          <li><Link to={{
+            pathname:'/hello',
+            state:{number:19}
+          }}>Inbox</Link></li>
         </ul>
         {this.props.children}
 
