@@ -27,11 +27,16 @@ class Home extends React.Component{
 		return(
 			<div className='settingContent'>
 				{this.state.setting.map((value,index) => {
+					var url = '/Setting/'+value.Action
+					console.log(url)
 					if(index === this.state.setting.length-1){
 						return(
 							<div className={value.Action} key={index}>
 								<div className='layout'>
-									<p><Link to='/hello'>{value.name}</Link></p>
+									<p><Link to={{
+										pathname:url,
+										state:{number:value.name}
+									}}>{value.name}</Link></p>
 								</div>
 							</div>
 						)
@@ -40,7 +45,11 @@ class Home extends React.Component{
 						<div className={value.Action} key={index}>
 							<div className='layout'>	
 								<p>{value.name}</p>
-								<p><i className='iconfont icon-gengduo'></i></p>
+								<p><Link to={{
+										pathname:url,
+										state:{number:value.name}
+									}}><i className='iconfont icon-gengduo'></i></Link>
+								</p>
 							</div>
 						</div>
 					)

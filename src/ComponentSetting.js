@@ -1,6 +1,7 @@
 import React from 'react'
 import './ComponentSetting.css'
 import Home from './Home'
+import UserAccount from './UserAccount'
 import {
   BrowserRouter as Router,
   Route,
@@ -29,18 +30,18 @@ class ComponentSetting extends React.Component{
       		this.previousLocation !== location // not initial render
     	)
 		return(
-			<div>
+			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
-					<Route exact path='/' component={Home}/>
-					<Route  path='/hello' component={hello}/>
+					<Route exact path='/Setting' component={Home}/>
+					<Route  path='/Setting/loginout' component={hello}/>
 				</Switch>
 			</div>
 			)
 		}	
 	}
 
-const hello = ({match}) =>(
-	<p>match.to.number</p>
+const hello = ({location}) =>(
+	<p>{location.state.number}</p>
 )
 
 const ModalGallery = () => (

@@ -33,6 +33,11 @@
 	color: rgba(23,12,41,.7);
 }
 
+.settingContent p a{
+	text-decoration: none;
+	color: rgba(23,12,41,.7);
+}
+
 .settingContent p i{
 	color: rgba(23,12,41,.4);
 	font-size: .8rem;
@@ -62,8 +67,19 @@
 	font-size: 1.2rem;
 }
 
+.settingTitle .layout:first-child p:nth-child(2) p{
+	width: 50px;
+	height: 100%
+}
+
 .settingTitle .layout:first-child p:nth-child(1){
 	text-align: center;
 	font-size: 1.2rem;
 	line-height: 7vh
+}
+
+.SettingPage{
+	width: 100%;
+	height: 100vh;
+	background: #f0f8ff;
 }
