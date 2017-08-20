@@ -11,6 +11,12 @@ import {
 
 
 class ComponentSetting extends React.Component{
+	constructor(props) {
+		super(props);
+		this.state={
+			url:['userAccount','changePassword','componentSetting','colorSetting','About','getAdioce','loginOut']
+		}
+	}
 	previousLocation = this.props.location
   	componentWillUpdate(nextProps) {
 	   const { location } = this.props
@@ -33,8 +39,10 @@ class ComponentSetting extends React.Component{
 			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
 					<Route exact path='/Setting' component={Home}/>
-					<Route  path='/Setting/loginOut' component={hello}/>
-					<Route  path='/Setting/componentSetting' component={hello}/>
+					{this.state.url.map((value,index) => {
+						const url = '/Setting/'+value
+						return <Route path={url} component={hello}/>
+					})}
 				</Switch>
 			</div>
 			)

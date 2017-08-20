@@ -95,3 +95,7 @@
 	height: 100vh;
 	background: #f7f7f9;
 }
+
+.SettingPage .userAction p{
+	font-size: 1.0rem
+}
