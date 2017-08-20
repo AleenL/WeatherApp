@@ -33,7 +33,8 @@ class ComponentSetting extends React.Component{
 			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
 					<Route exact path='/Setting' component={Home}/>
-					<Route  path='/Setting/loginout' component={hello}/>
+					<Route  path='/Setting/loginOut' component={hello}/>
+					<Route  path='/Setting/componentSetting' component={hello}/>
 				</Switch>
 			</div>
 			)
@@ -41,7 +42,10 @@ class ComponentSetting extends React.Component{
 	}
 
 const hello = ({location}) =>(
-	<p>{location.state.number}</p>
+	<div className='userAction'>
+		<p><Link to='/Setting'><i className='iconfont icon-gengduo'></i></Link></p>
+		<p>{location.state.number}</p>
+	</div>
 )
 
 const ModalGallery = () => (
