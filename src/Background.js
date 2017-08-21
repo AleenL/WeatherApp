@@ -3,7 +3,14 @@ import './Background.css'
 /*import Weather from './Weather'*/
 /*import GetCity from './getCity'
 import GetWeather from './GetWeather'*/
+import GetLocation from './GetLocation'
 import ComponentSetting from './ComponentSetting'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 class Background extends React.Component{
 	constructor(props) {
@@ -19,6 +26,12 @@ class Background extends React.Component{
 	}
 
 		render(){
+			const { location } = this.props
+    		const isModal = !!(
+      			location.state &&
+      			location.state.modal &&
+      			this.previousLocation !== location // not initial render
+    		)
 			const hours = this.state.date.getHours()/*,
 				  minutes = this.state.date.getMinutes(),
 				  seconds = this.state.date.getSeconds()*/
@@ -37,9 +50,10 @@ class Background extends React.Component{
 					{/*<Weather source="https://weixin.jirengu.com/weather" />*/}
 					{/*<GetCity />*/}
 					{/*<GetWeather />*/}
-					<div className='Setting'>
-						<ComponentSetting />
-					</div>
+					<Switch location={isModal?this.previousLocation : location}>
+						<Route path='/Setting' component={ComponentSetting}/>
+						<Route exact path='/' component={GetLocation}/>
+					</Switch>
 				</div>
 			)
 	}	

@@ -125,13 +125,8 @@ class GetLocation extends React.Component{
 				<div>
 					<GetHoursWea weather={this.state.hours}/>
 				</div>
-				<HashRouter>
-    				<Futureweather weather={[this.state.today,this.state.future]}>
-        				<Route exact path="/Home" component={Home} />
-        				<Route path="/about" component={About} />
-        				<Route path="/Message" component={Message} />
-    				</Futureweather>
-  				</HashRouter>
+				<NextWeekWeather day={this.state.future} />
+				<p><Link to='/Setting'>dd</Link></p>
 			</div>
 		)
 	}
