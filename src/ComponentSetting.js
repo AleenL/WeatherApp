@@ -2,7 +2,6 @@ import React from 'react'
 import './ComponentSetting.css'
 import Home from './Home'
 import UserAccount from './UserAccount'
-import GetLocation from './GetLocation'
 
 import {
   BrowserRouter as Router,
@@ -40,6 +39,7 @@ class ComponentSetting extends React.Component{
 		return(
 			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
+					<Route exact path='/Setting' component={Setting}/>
 					{this.state.url.map((value,index) => {
 						const url = '/Setting/'+value
 						return <Route key={index} path={url} component={hello}/>
@@ -50,7 +50,13 @@ class ComponentSetting extends React.Component{
 		}	
 	}
 
-
+const Setting=({history}) => {
+	const back = (e) => {
+		e.stopPropagation()
+		history.goBack()
+		}
+	return <Home onClick={back}/>
+}
 
 const hello = ({location}) =>(
 	<div>
