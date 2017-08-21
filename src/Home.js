@@ -23,6 +23,7 @@ class Home extends React.Component{
 		 ]
 		}
 	}
+
 	render(){
 		return(
 			<div className='settingContent'>
@@ -45,10 +46,7 @@ class Home extends React.Component{
 							<div className={value.Action} key={index}>
 								<div className='layout'>
 									<p>{value.name}</p>
-									<p><Link to={{
-										pathname:'/',
-										state:{number:value.name,action:value.Action}
-									}}><i className='iconfont'>&#xe603;</i></Link></p>
+									<p><Link to='/'><i className='iconfont'>&#xe603;</i></Link></p>
 								</div>
 							</div>
 						)

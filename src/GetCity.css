@@ -1,7 +1,7 @@
 #cityName{
 	width: 100%;
 	list-style: none;
-	background: #d7ecf1;
+	background: #f7f7f9;
 	position: relative;
 	overflow: hidden;
 }
@@ -30,7 +30,7 @@
 }
 
 #cityName li ul,searchPage #getString .resultTown{
-	background: #f3f8f1;
+	background: #fdfdfe;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;

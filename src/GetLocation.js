@@ -127,6 +127,7 @@ class GetLocation extends React.Component{
 				</div>
 				<NextWeekWeather day={this.state.future} />
 				<p><Link to='/Setting'>dd</Link></p>
+				<p><Link to='/City'>dd</Link></p>
 			</div>
 		)
 	}

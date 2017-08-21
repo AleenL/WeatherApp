@@ -1,8 +1,8 @@
 import React from 'react'
 import './Background.css'
-/*import Weather from './Weather'*/
-/*import GetCity from './getCity'
-import GetWeather from './GetWeather'*/
+import Home from './Home'
+import GetCity from './getCity'
+import GetWeather from './GetWeather'
 import GetLocation from './GetLocation'
 import ComponentSetting from './ComponentSetting'
 import {
@@ -51,8 +51,9 @@ class Background extends React.Component{
 					{/*<GetCity />*/}
 					{/*<GetWeather />*/}
 					<Switch location={isModal?this.previousLocation : location}>
-						<Route path='/Setting' component={ComponentSetting}/>
-						<Route exact path='/' component={GetLocation}/>
+						<Route exact  path='/' component={GetLocation}/>
+						<Route  path='/Setting' component={ComponentSetting}/>
+						<Route  path='/City' component={GetCity}/>
 					</Switch>
 				</div>
 			)

@@ -2,6 +2,7 @@ import React from 'react'
 import './ComponentSetting.css'
 import Home from './Home'
 import UserAccount from './UserAccount'
+import GetLocation from './GetLocation'
 
 import {
   BrowserRouter as Router,
@@ -49,6 +50,8 @@ class ComponentSetting extends React.Component{
 			)
 		}	
 	}
+
+
 
 const hello = ({location}) =>(
 	<div>
