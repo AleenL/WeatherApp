@@ -124,10 +124,10 @@ class GetLocation extends React.Component{
 				<Feel tmp={this.state.tmp} />
 				<div>
 					<GetHoursWea weather={this.state.hours}/>
+
 				</div>
 				<NextWeekWeather day={this.state.future} />
-				<p><Link to='/Setting'>dd</Link></p>
-				<p><Link to='/City'>dd</Link></p>
+				<WeatherEN weather={this.state.future.day2} />
 			</div>
 		)
 	}

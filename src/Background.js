@@ -1,9 +1,8 @@
 import React from 'react'
 import './Background.css'
-import Home from './Home'
 import SettingTitle from './SettingTitle'
 import GetCity from './getCity'
-import GetWeather from './GetWeather'
+import Weather from './Weather'
 import GetLocation from './GetLocation'
 import {
   BrowserRouter as Router,
@@ -47,14 +46,14 @@ class Background extends React.Component{
 			
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
-					{/*<Weather source="https://weixin.jirengu.com/weather" />*/}
+					<Weather source="https://weixin.jirengu.com/weather" />
 					{/*<GetCity />*/}
-					{/*<GetWeather />*/}
-					<Switch location={isModal?this.previousLocation : location}>
-						<Route exact  path='/' component={GetLocation}/>
-						<Route  path='/Setting' component={SettingTitle}/>
-						<Route  path='/City' component={GetCity}/>
-					</Switch>
+					{/*<GetWeather />
+					{/*<Switch location={isModal?this.previousLocation : location}>
+											<Route exact  path='/' component={GetLocation}/>
+											<Route  path='/Setting' component={SettingTitle}/>
+											<Route  path='/City' component={GetCity}/>
+										</Switch>*/}
 				</div>
 			)
 	}	

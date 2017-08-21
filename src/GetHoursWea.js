@@ -13,7 +13,6 @@ class GetHoursWea extends React.Component{
 
 	componentDidUpdate(nextProps) {
 		if(this.props.weather !== nextProps.weather){
-			console.log(this.props.weather)
 			this.setState({
 				weather:this.props.weather
 			})
