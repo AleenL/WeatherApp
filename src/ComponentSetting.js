@@ -2,6 +2,7 @@ import React from 'react'
 import './ComponentSetting.css'
 import Home from './Home'
 import UserAccount from './UserAccount'
+import GetLocation from './GetLocation'
 import {
   BrowserRouter as Router,
   Route,
@@ -17,7 +18,7 @@ class ComponentSetting extends React.Component{
 			url:['userAccount','changePassword','componentSetting','colorSetting','About','getAdioce','loginOut']
 		}
 	}
-	previousLocation = this.props.location
+	/*previousLocation = this.props.location
   	componentWillUpdate(nextProps) {
 	   const { location } = this.props
     	// set previousLocation if props.location is not modal
@@ -27,7 +28,7 @@ class ComponentSetting extends React.Component{
     	){
      	 	this.previousLocation = this.props.location
    	 	}
-  	}
+  	}*/
 	render(){
 		const { location } = this.props
    		const isModal = !!(
@@ -39,6 +40,7 @@ class ComponentSetting extends React.Component{
 			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
 					<Route exact path='/Setting' component={Home}/>
+					<Route exact path='goBack()' component={GetLocation}/>
 					{this.state.url.map((value,index) => {
 						const url = '/Setting/'+value
 						return <Route key={index} path={url} component={hello}/>
@@ -52,7 +54,7 @@ class ComponentSetting extends React.Component{
 const hello = ({location}) =>(
 	<div>
 		<div className='userAction' id={location.state.action}>
-			<p><Link to='/Setting'><i className='iconfont icon-gengduo'></i></Link></p>
+			<p><Link to='/Setting'><i className='iconfont'>&#xe603;</i></Link></p>
 			<p>{location.state.number}</p>
 		</div>
 		<UserAccount account='784757xxx@qq.com' action={location.state.action} / >

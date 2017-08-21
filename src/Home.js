@@ -40,6 +40,19 @@ class Home extends React.Component{
 							</div>
 						)
 					}
+					if(index === 0){
+						return(
+							<div className={value.Action} key={index}>
+								<div className='layout'>
+									<p>{value.name}</p>
+									<p><Link to={{
+										pathname:'/',
+										state:{number:value.name,action:value.Action}
+									}}><i className='iconfont'>&#xe603;</i></Link></p>
+								</div>
+							</div>
+						)
+					}
 					return(
 						<div className={value.Action} key={index}>
 							<div className='layout'>	
@@ -47,7 +60,7 @@ class Home extends React.Component{
 								<p><Link to={{
 										pathname:url,
 										state:{number:value.name,action:value.Action}
-									}}><i className='iconfont icon-gengduo'></i></Link>
+									}}><i className='iconfont'>&#xe603;</i></Link>
 								</p>
 							</div>
 						</div>

@@ -2,7 +2,7 @@ import React from 'react'
 import './UserAccount.css'
 import ComponentState from './ComponentState'
 
-export default React.createClass({
+class UserAccount extends React.Component{
 	render(){
 		return(
 			<div >
@@ -26,4 +26,6 @@ export default React.createClass({
 			</div>
 		)
 	}
-})
+}
+
+export default UserAccount

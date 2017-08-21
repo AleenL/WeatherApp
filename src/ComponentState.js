@@ -32,7 +32,7 @@ class ComponentState extends React.Component{
 	render(){
 		
 		return(
-			<div style={{width:'95%',margin:'0 auto'}}>
+			<div style={{width:'95%',margin:'0 auto'}} >
 			{this.state.state.map(function(value,index){
 				return (
 					<div key={index} className={value.component} 
@@ -41,7 +41,7 @@ class ComponentState extends React.Component{
 						justifyContent: 'space-between',
 						alignItems:'center',
 					}}>
-						<p style={{fontSize:'1.0rem'}}>{value.text}</p>
+						<p style={{fontSize:'1.0rem',color:'rgba(0,0,0,.6)'}}>{value.text}</p>
 						<Switch id={value.component} state={value.state} showState={this.showState.bind(this)}/>
 					</div>
 				)
