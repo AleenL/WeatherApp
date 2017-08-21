@@ -1,5 +1,6 @@
 import React from 'react'
 import './UserAccount.css'
+import ComponentState from './ComponentState'
 
 export default React.createClass({
 	render(){
@@ -18,6 +19,9 @@ export default React.createClass({
 				<p><input type="text" placeholder='请输入原密码'/></p>
 				<button>下一步</button>
 			</div>
+			}
+			{!this.props.action.indexOf('componentSetting') &&
+			<ComponentState />
 			}
 			</div>
 		)

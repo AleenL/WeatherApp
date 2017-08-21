@@ -1,68 +1,98 @@
-import ReactDOM from 'react-dom';
-import React, { Component } from 'react';
-import WeatherEN from './weatherEN'
-import NextWeekWeather from './NextWeekWeather'
-import NextWeekTmp from './NextWeekTmp'
-import {
-  HashRouter,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
-import './FutureWeather.css'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+{/*<div className='settingContent'>
+					<div className='settingTitle'>
+						<div className='layoutTitle'>
+							<p><i className='iconfont icon-gengduo'></i></p>
+							<p>设置</p>
+						</div>
+					</div>
+					<div className='userAccount'>
+						<div className='layout'>
+							<p>我的账号</p>
+							<p><i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
+					<div className='changePassword'>
+						<div className='layout'>
+							<p>修改密码</p>
+							<p><i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
+					
+					
+					<div className='componentSetting'>
+						<div className='layout'>
+							<p>组件设置</p>
+							<p><i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
+					<div className='colorSetting'>
+						<div className='layout'>
+							<p>主题设置</p>
+							<p><i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
 
-class Futureweather extends React.Component{
-	constructor(props) {
+					<div className='About'>
+						<div className='layout'>
+							<p>关于天气</p>
+							<p><i style={{fontStyle:'normal'}}>3.0.1</i> <i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
+					<div className='getAdioce'>
+						<div className='layout'>
+							<p>意见反馈</p>
+							<p><i className='iconfont icon-gengduo'></i></p>
+						</div>
+					</div>
+
+					<div className='loginOut'>
+						<div className='layout'>
+							<p>退出当前帐号</p>
+						</div>
+					</div>
+				</div>*/}
+
+											/*<Route path='/changePassword' component={ChangePassword}/>
+						
+							<Route path='/colorSetting' component={ColorSetting}/>
+							<Route path='/about' component={About}/>
+							<Route path='/getAdioce' component={GetAdioce}/>}*/
+
+
+			<div className='settingContent'>
+				{this.state.setting.map((value,index) => {
+					if(index === this.state.setting.length-1){
+						return(
+							<div className={value.Action} key={index}>
+								<div className='layout'>
+									<p>{value.name}</p>
+								</div>
+							</div>
+						)
+					}
+					return(
+						<div className={value.Action} key={index}>
+							<div className='layout'>	
+								<p>{value.name}</p>
+								<p><i className='iconfont icon-gengduo'></i></p>
+							</div>
+						</div>
+					)
+				})}
+			</div>
+
+			constructor(props) {
 		super(props);
 		this.state={
-			today:this.props.weather[0],
-			day:this.props.weather[1],
-			show:true,
+		 setting:[
+			{name:'设置',Action:'settingTitle'},
+			{name:'我的账号',Action:'userAccount'},
+			{name:'修改密码',Action:'changePassword'},
+			{name:'组件设置',Action:'componentSetting'},
+			{name:'主题设置',Action:'colorSetting'},
+			{name:'关于天气',Action:'About'},
+			{name:'意见反馈',Action:'getAdioce'},
+			{name:'退出当前帐号',Action:'loginOut'},
+		 ]
 		}
 	}
-	componentDidUpdate(nextProps, nextState) {
-		if (this.props.weather !== nextProps.weather)
-		this.setState({
-			today:this.props.weather[0],
-			day:this.props.weather[1],
-		})
-	}
-
-	handleLogoutClick(){
-		let node = document.getElementById('weatherTitle'),
-		    wList = document.getElementById('weatherList')
-		if(this.state.show){
-			this.setState({
-				show: false
-			})
-			node.style.backgroundColor='rgba(10,10,10,.1)'
-		}else{
-			this.setState({
-				show: true
-			})
-			node.style.backgroundColor='rgba(0,0,0,0)'
-		}
-	}
-
-	render(){
-
-		return (
-			<div className='weatherMsg'>
-				<div className='first'>
-					<WeatherEN weather={this.state.day.day1} />
-					{!this.state.show && <NextWeekTmp day={this.state.day} />}
-					{!this.state.show &&<NextWeekWeather day={this.state.day} />}
-				</div>
-				
-					{this.state.show && <WeatherEN weather={this.state.day.day2} />}
-				
-				<div id='weatherList'>
-					
-				</div>
-			</div>	
-		)
-	}
-}
-
-export default Futureweather
