@@ -40,7 +40,6 @@ class ComponentSetting extends React.Component{
 		return(
 			<div className='SettingPage'>
 				<Switch location={isModal?this.previousLocation : location}>
-					<Route exact path='/Setting' component={Home}/>
 					{this.state.url.map((value,index) => {
 						const url = '/Setting/'+value
 						return <Route key={index} path={url} component={hello}/>
