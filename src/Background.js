@@ -1,10 +1,10 @@
 import React from 'react'
 import './Background.css'
 import Home from './Home'
+import SettingTitle from './SettingTitle'
 import GetCity from './getCity'
 import GetWeather from './GetWeather'
 import GetLocation from './GetLocation'
-import ComponentSetting from './ComponentSetting'
 import {
   BrowserRouter as Router,
   Route,
@@ -52,7 +52,7 @@ class Background extends React.Component{
 					{/*<GetWeather />*/}
 					<Switch location={isModal?this.previousLocation : location}>
 						<Route exact  path='/' component={GetLocation}/>
-						<Route  path='/Setting' component={ComponentSetting}/>
+						<Route  path='/Setting' component={SettingTitle}/>
 						<Route  path='/City' component={GetCity}/>
 					</Switch>
 				</div>
