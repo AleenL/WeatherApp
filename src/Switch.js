@@ -4,7 +4,7 @@ import './Switch.css'
 export default class Switch extends React.Component{
 
 	getState(e){
-		this.props.showState.call(this)
+		this.props.showState(e)
 	}
 
 	render(){

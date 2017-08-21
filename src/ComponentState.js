@@ -15,8 +15,18 @@ class ComponentState extends React.Component{
 		}
 	}
 
-	showState(){
-		console.log('hh')
+	showState(event){
+		/*e.target.checked,e.target.getAttribute('id')*/
+		this.state.state.forEach((e,index)=>{
+			if(e.component === event.target.getAttribute('id')){
+				let items = this.state.state
+				items[index] = {text:e.text,component:e.component,state:event.target.checked}
+				this.setState({
+					state:items
+				})
+			}
+		})
+		console.log(this.state.state)
 	}
 
 	render(){
@@ -32,10 +42,10 @@ class ComponentState extends React.Component{
 						alignItems:'center',
 					}}>
 						<p style={{fontSize:'1.0rem'}}>{value.text}</p>
-						<Switch id={value.component} state={value.state}/>
+						<Switch id={value.component} state={value.state} showState={this.showState.bind(this)}/>
 					</div>
 				)
-			})}
+			},this)}
 			</div>
 		)
 	}		
