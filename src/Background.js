@@ -1,6 +1,7 @@
 import React from 'react'
 import './Background.css'
 import SettingTitle from './SettingTitle'
+import Suggestion from './Suggestion'
 import GetCity from './getCity'
 import GetLocation from './GetLocation'
 import {
@@ -48,6 +49,7 @@ class Background extends React.Component{
 						<Route exact  path='/' component={GetLocation}/>
 						<Route  path='/Setting' component={SettingTitle}/>
 						<Route  path='/City' component={GetCity}/>
+						<Route  path='/Suggest' component={Suggestion}/>
 					</Switch>
 				</div>
 			)

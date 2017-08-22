@@ -17,8 +17,37 @@
 	font-weight: 100;
 }
 
-.titleText p:nth-child(2){
+.titleText>p:nth-child(2){
 	font-size: 1.9rem;
 	margin-top: -0.5rem;
-	margin-left: -0.8rem
+	margin-left: -1.2rem
+}
+
+.titleText .IconChoose a{
+	text-decoration: none;
+	color: rgba(241,230,228,1);
+
+}
+.titleText .IconChoose a i{
+	font-size: 2rem;
+}
+
+.titleText .IconChoose p:nth-child(2) a i{
+	font-size: 1.6rem;
+}
+
+.titleText .IconChoose p{
+	position: absolute;
+	top: -4rem;
+}
+
+.titleText .IconChoose p:first-child{
+	left: 1rem;
+}
+
+.titleText .IconChoose p:nth-child(2){
+	right: 1rem;
+}
+.titleText .IconChoose p:nth-child(3){
+	right: 5em;
 }

@@ -116,6 +116,11 @@ class GetLocation extends React.Component{
 					<NextWeekWeather day={this.state.future} />
 					<NextWeekTmp day={this.state.future} />
 				</div>
+				<div className='IconChoose'>
+					<p><Link to='/Setting'><i className='iconfont'>&#xe605;</i></Link></p>
+					<p><Link to='/City'><i className='iconfont'>&#xe648;</i></Link></p>
+					<p><Link to='/Suggest'><i className='iconfont'>&#xe6e5;</i></Link></p>
+				</div>
 			</div>
 		)
 	}
