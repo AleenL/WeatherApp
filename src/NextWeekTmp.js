@@ -23,27 +23,28 @@ class NextWeekWeather extends React.Component{
 			<div className='NextWeekWeather'>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day1} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day1.day} choose='enless'/>
+					<p>{this.state.day.day1.day}</p>
 				</div>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day2} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day2.day} choose='enless'/>
+					<p>{this.state.day.day1.day}</p>
 				</div>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day3} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day3.day} choose='enless'/>
+					<p>{this.state.day.day1.day}</p>
 				</div>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day4} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day4.day} choose='enless'/>
+					<p>{this.state.day.day1.day}</p>
 				</div>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day5} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day5.day} choose='enless'/>
+					{/*<WeekdayEN ch={this.state.day.day5.day} choose='enless'/>*/}
+					<p>{this.state.day.day1.day}</p>
 				</div>
 				<div className='iconList'>
 					<Weekdaytmp weather={this.state.day.day6} getIcon='Icon'/>
-					<WeekdayEN ch={this.state.day.day6.day} choose='enless'/>
+					<p>{this.state.day.day1.day}</p>
 				</div>
 			</div>
 		)
