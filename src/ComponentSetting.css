@@ -26,14 +26,14 @@
 	color: rgba(0,0,0,0);
 }
 
-.settingContent>div:nth-child(2),.settingContent>div:nth-child(4),.settingContent>div:nth-child(8){
+.settingContent>div:nth-child(2),.settingContent>div:nth-child(4),.settingContent>div:nth-child(9){
 	margin-top: .8rem;
 }
 .settingContent>div:nth-child(3),.settingContent>div:nth-child(5){
 	margin-bottom: .8rem;
 }
 
-.settingContent>div:nth-child(2n+2) .layout{
+.settingContent>div:nth-child(2n+2) .layout,.settingContent>div:nth-child(7) .layout{
 	border-bottom: 1px solid rgba(22,22,22,.2);
 }
 .settingContent>div:nth-child(8) .layout{
@@ -63,11 +63,11 @@
 	color: rgba(23,12,41,.4);
 	font-size: .8rem;
 }
-.settingContent>div:nth-child(8) .layout{
+.settingContent>div:nth-child(9) .layout{
 	justify-content: center;
 	
 }
-.settingContent>div:nth-child(8) .layout p a{
+.settingContent>div:nth-child(9) .layout p a{
 	color: rgba(215,22,22,.8);
 	text-decoration: none
 }

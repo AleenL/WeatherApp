@@ -20,6 +20,7 @@ class GetLocation extends React.Component{
 			city: null,
 			tmp: null,
 			feel:null,
+			Air: null,
 			today:" ",
 			future: {
 				day1:" ",
@@ -88,6 +89,7 @@ class GetLocation extends React.Component{
       		 	tmp: result.weather[0].now.temperature,
       		 	city: result.weather[0].city_name,
       		 	today: result.weather[0].now,
+      		 	Air: result.weather[0].now.air_quality,
       		 	suggest: result.weather[0].today.suggestion,
       		 	future:{
       		 		day1: result.weather[0].future[0],
@@ -124,6 +126,9 @@ class GetLocation extends React.Component{
 						pathname:'/Suggest',
 						state:this.state.suggest
 					}}><i className='iconfont'>&#xe6e5;</i></Link></p>
+				</div>
+				<div className='airQuality'>
+					{this.state.Air && <p>PM:{this.state.Air.city.pm25}</p>}
 				</div>
 			</div>
 		)

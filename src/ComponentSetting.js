@@ -15,7 +15,7 @@ class ComponentSetting extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-			url:['userAccount','changePassword','componentSetting','colorSetting','About','getAdioce','loginOut']
+			url:['userAccount','changePassword','componentSetting','cityChoose','colorSetting','About','getAdioce','loginOut']
 		}
 	}
 	/*previousLocation = this.props.location
