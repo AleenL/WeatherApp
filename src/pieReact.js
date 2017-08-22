@@ -3,18 +3,6 @@ import echarts from 'echarts';
 
 class PieReact extends Component {
 	
-	componentDidUpdate(nextProps) {
-		console.log(this.props.tmp)
-		/*var arr = []
-		console.log(this.props.tmp.length)
-		if(this.props.tmp !== nextProps.tmp){
-			for(let i=0;i<this.props.tmp.length;i++){
-				console.log(i)
-			}
-		}
-		console.log(arr)*/
-	}
-
     componentDidMount() {
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));

@@ -18,19 +18,19 @@ class Feel extends React.Component{
 		console.log(tmp)
 		if(tmp>30){
 			this.setState({
-				feel:'Sweltering'
+				feel:'炎热'
 			})
 		}else if(tmp<=30 && tmp>20){
 			this.setState({
-				feel:'Comfortable'
+				feel:'舒适'
 			})
 		}else if(tmp<10 && tmp<=20){
 			this.setState({
-				feel:'Cold'
+				feel:'凉爽'
 			})
 		}else{
 			this.setState({
-				feel:'Chilly'
+				feel:'寒冷'
 			})
 		}
 	}

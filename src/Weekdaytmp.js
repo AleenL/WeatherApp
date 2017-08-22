@@ -10,47 +10,17 @@ class WeekdayEN extends React.Component{
 			tmp: this.props.weather.high,
 			name: account.data.name,
 		}
-
-		// account.onChangeEvent('change', () => {
-		// 	this.setState({
-		// 		name: account.data.name
-		// 	})
-		// })
-
-		account.onChangeEvent('change', () => {
-			console.log(111111)
-		})
-
-
-		account.onChangeEvent('change', () => {
-			console.log(222222)
-		})
-
-		account.onChangeEvent('change', () => {
-			console.log(333333)
-		})
 	}
-
-	// componentDidUpdate(nextProps, nextState){
-	// 	if(this.props.weather !== nextProps.weather)
-	// 		this.setState({
-	// 			tmp:this.props.weather.high
-	// 		})
-	// }
-
-	changeName (event) {
-		account.set({name: '112'});
+	componentDidUpdate(nextProps) {
+		if(nextProps.weather.high !== this.props.weather.high){
+			this.setState({
+				tmp: this.props.weather.high
+			})
+		}
 	}
-	// componentDidMount() {
-	// 	console.log(1)
-	// 	if(this.state.weather)
-	// 		this.setState({
-	// 			tmp:this.state.weather.high
-	// 		})
-	// }
 
 	render(){
-		return <p onClick={this.changeName.bind(this)}>{this.state.tmp}°</p>	
+		return <p>{this.state.tmp}°</p>	
 	}
 }
 

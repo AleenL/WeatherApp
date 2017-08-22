@@ -8,7 +8,7 @@ import {
   Link,
   Switch
 } from 'react-router-dom';
-import WeatherEN from './weatherEN'
+import WeatherCN from './weatherCN'
 import NextWeekWeather from './NextWeekWeather'
 import NextWeekTmp from './NextWeekTmp'
 import Ajax from './Ajax'
@@ -106,28 +106,16 @@ class GetLocation extends React.Component{
 	}
 
 	render(){
-		const About = () =>(
-			<NextWeekTmp day={this.state.future} />
-		)
-		
-		const Home = () =>(
-			<NextWeekWeather day={this.state.future} />
-		)
-
-		const Message = () =>(
-			<WeatherEN weather={this.state.future.day2} />
-		)
-
 		return (
 			<div className='titleText'>
 				<p>{this.state.tmp}<span>°</span></p>
 				<Feel tmp={this.state.tmp} />
-				<div>
-					<GetHoursWea weather={this.state.hours}/>
-
+				<div className='weatherMsg'>
+					<WeatherCN weather={this.state.future.day1} />
+					<WeatherCN weather={this.state.future.day2} />
+					<NextWeekWeather day={this.state.future} />
+					<NextWeekTmp day={this.state.future} />
 				</div>
-				<NextWeekWeather day={this.state.future} />
-				<WeatherEN weather={this.state.future.day2} />
 			</div>
 		)
 	}

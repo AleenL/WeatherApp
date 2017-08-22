@@ -2,12 +2,10 @@ import React from 'react'
 import './Background.css'
 import SettingTitle from './SettingTitle'
 import GetCity from './getCity'
-import Weather from './Weather'
 import GetLocation from './GetLocation'
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Switch
 } from 'react-router-dom'
 
@@ -46,14 +44,11 @@ class Background extends React.Component{
 			
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
-					<Weather source="https://weixin.jirengu.com/weather" />
-					{/*<GetCity />*/}
-					{/*<GetWeather />
-					{/*<Switch location={isModal?this.previousLocation : location}>
-											<Route exact  path='/' component={GetLocation}/>
-											<Route  path='/Setting' component={SettingTitle}/>
-											<Route  path='/City' component={GetCity}/>
-										</Switch>*/}
+					<Switch location={isModal?this.previousLocation : location}>
+						<Route exact  path='/' component={GetLocation}/>
+						<Route  path='/Setting' component={SettingTitle}/>
+						<Route  path='/City' component={GetCity}/>
+					</Switch>
 				</div>
 			)
 	}	
