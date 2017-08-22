@@ -1,5 +1,5 @@
 import React from 'react'
-import Weekday from './WeekdayEN'
+
 
 class WeatherEN extends React.Component{
 	constructor(props) {
@@ -63,7 +63,7 @@ class WeatherEN extends React.Component{
 		}else{
 			return(
 			<div className='weatherTitle' id="weatherTitle">
-				<Weekday ch={this.props.weather.day} choose='all'/>
+				
 				<div>
 					<p>{this.props.weather.high}°<span>/</span>{this.props.weather.low}°</p>
 					<p>{this.state.text} </p>

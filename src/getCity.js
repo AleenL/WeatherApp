@@ -47,12 +47,12 @@ class GetCity extends React.Component{
 	}
 	
 	componentDidMount() {
-		let [oldArr,newArr,liArr] = [[],[],document.getElementsByClassName('sildeCode')]
+		let [liArr] = [document.getElementsByClassName('sildeCode')]
 		let newLi = liArr[0].childNodes[0].childNodes
 		this.state.city.map((value,index)=>{
-			if(value.city.replace(/[^a-zA-Z]/gi,"").length==0) return;
+			if(value.city.replace(/[^a-zA-Z]/gi,"").length === 0) return;
 			for(let i=0;i<newLi.length;i++){
-				if(newLi[i].innerText == value.city.replace(/[^a-zA-Z]/gi,"")){
+				if(newLi[i].innerText === value.city.replace(/[^a-zA-Z]/gi,"")){
 					newLi[i].style.color='#000'
 				}
 			}

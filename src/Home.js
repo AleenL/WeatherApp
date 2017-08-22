@@ -1,11 +1,11 @@
 import React from 'react'
-import ComponentSetting from './ComponentSetting'
 import {
   BrowserRouter as Router,
   Route,
   Link,
   Switch
 } from 'react-router-dom'
+import './ComponentSetting.css'
 
 class Home extends React.Component{
 	constructor(props) {

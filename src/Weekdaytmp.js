@@ -1,14 +1,11 @@
 import React from 'react'
-import Account from './Account'
 
-const account = new Account({name: 'Tong'});
 
 class WeekdayEN extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-			tmp: this.props.weather.high,
-			name: account.data.name,
+			tmp: this.props.weather.high
 		}
 	}
 	componentDidUpdate(nextProps) {

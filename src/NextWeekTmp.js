@@ -1,5 +1,4 @@
 import React from 'react'
-import WeekdayEN from './WeekdayEN'
 import Weekdaytmp from './Weekdaytmp'
 import './NextWeekWeather.css'
 

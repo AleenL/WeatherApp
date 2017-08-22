@@ -1,18 +1,17 @@
 import React from 'react'
-import Futureweather from './FutureWeather'
 import Feel from './Feel'
 import './Weather.css'
 import {
-  HashRouter,
+  BrowserRouter as Router,
   Route,
   Link,
   Switch
-} from 'react-router-dom';
+} from 'react-router-dom'
 import WeatherCN from './weatherCN'
 import NextWeekWeather from './NextWeekWeather'
 import NextWeekTmp from './NextWeekTmp'
 import Ajax from './Ajax'
-import GetHoursWea from './GetHoursWea'
+
 
 class GetLocation extends React.Component{
 	constructor(props) {
@@ -84,10 +83,12 @@ class GetLocation extends React.Component{
 		let that = this;
 		var CityId = new Ajax('https://weixin.jirengu.com/weather/now','get',{cityid:data},true)
 		CityId.getMsg().then(function(result){
+			console.log(result)
 			that.setState({
       		 	tmp: result.weather[0].now.temperature,
       		 	city: result.weather[0].city_name,
       		 	today: result.weather[0].now,
+      		 	suggest: result.weather[0].today.suggestion,
       		 	future:{
       		 		day1: result.weather[0].future[0],
       		 		day2: result.weather[0].future[1],
@@ -119,7 +120,10 @@ class GetLocation extends React.Component{
 				<div className='IconChoose'>
 					<p><Link to='/Setting'><i className='iconfont'>&#xe605;</i></Link></p>
 					<p><Link to='/City'><i className='iconfont'>&#xe648;</i></Link></p>
-					<p><Link to='/Suggest'><i className='iconfont'>&#xe6e5;</i></Link></p>
+					<p><Link to={{
+						pathname:'/Suggest',
+						state:this.state.suggest
+					}}><i className='iconfont'>&#xe6e5;</i></Link></p>
 				</div>
 			</div>
 		)
