@@ -8,6 +8,7 @@ import {
 import './Suggestion.css'
 import GetTime from './GetTime'
 import WeatherCN from './weatherCN'
+import WindIcon from './WindIcon'
 
 
 
@@ -27,6 +28,11 @@ const hello = ({location}) =>(
 						<p>{location.state.today.text}</p>
 						<p>{location.state.today.temperature}°C</p>
 						<p>{location.state.suggest.suggestion.sport.brief}运动</p>
+					</div>
+					<div>
+						<p><i className='iconfont'>&#xe71a;</i>湿度 {location.state.today.humidity}%</p>
+						<p><i className='iconfont'>&#xe62d;</i>体感温度 {location.state.today.feels_like}°</p>
+						<WindIcon wind={location.state.today} />
 					</div>
 				</div>
 			</div>

@@ -41,6 +41,7 @@
 .userAction  .timeShow{
 	color: #ff8230;
 	font-size: 1.1rem;
+	width: 15%;
 	left: 5%;
 	top: 9vh;
 	letter-spacing: 0.1rem;
@@ -49,15 +50,16 @@
 }
 
 .userAction .suggestionPage{
-	margin-top: 8vh;
+	margin-top: 8.5vh;
 	margin-left: 25%;
+	width: 75%;
 }
 
-.userAction .suggestionPage .weatherList p:first-child i{
+.userAction .suggestionPage .weatherList>p:first-child i{
 	font-size: 2rem;
 	color: #fdca22;
 }
-.userAction .suggestionPage .weatherList p:last-of-type{
+.userAction .suggestionPage .weatherList .weatherListTitle p:last-of-type{
 	padding: 0 .8rem;
 	background: #ff8230;
 	border-radius: 4px;
@@ -79,4 +81,55 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+.userAction .suggestionPage .weatherList div:last-child{
+	width: 86%;
+	margin-left: 8%;
+	border-left: 3px solid #ccc;
+}
+.userAction .suggestionPage .weatherList div:last-child p{
+	font-size: 0.7rem;
+	letter-spacing: 0.05rem;
+}
+
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.xibei::after{
+	content: '\e616';
+	display: inline-block;
+	clear: both;
+}
+
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.bei::after{
+	content: '\e613';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.dongbei::after{
+	content: '\e614';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.dongnan::after{
+	content: '\e617';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.xinan::after{
+	content: '\e60f';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.xi::after{
+	content: '\e60e';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.dong::after{
+	content: '\e610';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList div:last-child p .iconfont.nan::after{
+	content: '\e612';
+	display: inline-block;
+	clear: both;
 }
