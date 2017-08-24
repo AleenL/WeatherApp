@@ -1,23 +1,24 @@
-import 'React' from 'react'
+import React from 'react'
 
 class GetTime extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-		time:'00:00'
+			date:new Date,
 		}
 	}
 
 	componentDidMount() {
-		let time = new Date()
-		let [hours,mins] = [time.getHours(),time.getMinutes()]
-		this.setState({
-			time: `${hours}:${mins}`
-		})
+		setInterval(() => this.setState({date:new Date}),1000)
 	}
 
 	render(){
-		return <p>{this.state.time}</p>
+		return (
+			<p className='timeShow'>
+			{this.state.date.getHours()<10 ? ('0'+this.state.date.getHours()) : this.state.date.getHours()}:
+			{this.state.date.getMinutes()<10 ? ('0'+this.state.date.getMinutes()) : this.state.date.getMinutes()}
+			</p>
+		)
 	}
 }
 

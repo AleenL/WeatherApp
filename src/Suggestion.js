@@ -6,6 +6,7 @@ import {
   Switch
 } from 'react-router-dom'
 import './Suggestion.css'
+import GetTime from './GetTime'
 
 
 
@@ -16,7 +17,7 @@ const hello = ({location}) =>(
 				<p><Link to='/'><i className='iconfont'>&#xe603;</i></Link></p>
 				<p>建议</p>
 			</div>
-			{console.log(location.state)}
+			<GetTime/>
 			<p>{location.state.dressing.details}</p>
 			<p>{location.state.flu.details}</p>
 			<p>{location.state.car_washing.details}</p>
