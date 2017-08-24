@@ -59,11 +59,7 @@
 	font-size: 2rem;
 	color: #fdca22;
 }
-.userAction .suggestionPage .weatherList .weatherListTitle p:last-of-type{
-	padding: 0 .8rem;
-	background: #ff8230;
-	border-radius: 4px;
-}
+
 
 .userAction .suggestionPage .weatherList p{
 	font-size: .82rem;
@@ -73,22 +69,30 @@
 
 .userAction .suggestionPage .weatherList .weatherListTitle{
 	width: 80%;
-	height: 2rem;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
+	height: 3rem;
 }
-.userAction .suggestionPage .weatherList .weatherItems{
+
+.userAction .suggestionPage .weatherList .weatherListTitle p,
+.userAction .suggestionPage .airBox p{
+	display: inline-block;
+	line-height: 3rem;
+	margin-right: 0.5rem;
+}
+
+.userAction .suggestionPage .weatherList .weatherItems,
+.userAction .suggestionPage .airBox .airSuggest{
 	width: 95%;
 	margin-left: 2%;
 	border-left: 3px solid #ccc;
 	padding-left: 0.2rem;
 	padding-bottom: 1rem;
 	padding-top: 0.2rem;
+}
+
+.userAction .suggestionPage .airBox .airSuggest .airNumber p{
+	width: 30%;
+	text-align: center;
+	line-height: 2rem;
 }
 .userAction .suggestionPage .weatherList .weatherItems p{
 	font-size: 0.6rem;
@@ -101,7 +105,12 @@
 	width: 54%;
 }
 
-
+.userAction .suggestionPage .weatherList .weatherListTitle p:last-of-type{
+	padding: 0 .6rem;
+	line-height: 1.2rem;
+	background: #ff8230;
+	border-radius: 4px;
+}
 
 .userAction .suggestionPage .weatherList .weatherItems p .iconfont.xibei::after{
 	content: '\e616';
@@ -141,6 +150,16 @@
 }
 .userAction .suggestionPage .weatherList .weatherItems p .iconfont.nan::after{
 	content: '\e612';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .airBox .airTitle p .iconfont.good::after{
+	content: '\e668';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .airBox .airTitle p .iconfont.bad::after{
+	content: '\e647';
 	display: inline-block;
 	clear: both;
 }
