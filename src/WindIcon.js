@@ -144,7 +144,7 @@ class WindIcon extends React.Component{
 		return (
 			<p>
 			<i className={`iconfont ${this.state.classname}`}></i>
-			{this.state.wind.wind_scale}级{this.state.wind.wind_direction}风 {this.state.windMessage}
+			{this.state.wind.wind_scale}级 {this.state.wind.wind_direction}风 {this.state.windMessage}
 			</p>
 		)
 	}

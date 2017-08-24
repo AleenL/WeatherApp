@@ -82,53 +82,64 @@
 	justify-content: space-around;
 	align-items: center;
 }
-.userAction .suggestionPage .weatherList div:last-child{
-	width: 86%;
-	margin-left: 8%;
+.userAction .suggestionPage .weatherList .weatherItems{
+	width: 95%;
+	margin-left: 2%;
 	border-left: 3px solid #ccc;
+	padding-left: 0.2rem;
+	padding-bottom: 1rem;
+	padding-top: 0.2rem;
 }
-.userAction .suggestionPage .weatherList div:last-child p{
-	font-size: 0.7rem;
+.userAction .suggestionPage .weatherList .weatherItems p{
+	font-size: 0.6rem;
 	letter-spacing: 0.05rem;
+	display: inline-block;
+	
 }
 
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.xibei::after{
+.userAction .suggestionPage .weatherList .weatherItems p:nth-child(2n+1){
+	width: 54%;
+}
+
+
+
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.xibei::after{
 	content: '\e616';
 	display: inline-block;
 	clear: both;
 }
 
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.bei::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.bei::after{
 	content: '\e613';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.dongbei::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.dongbei::after{
 	content: '\e614';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.dongnan::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.dongnan::after{
 	content: '\e617';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.xinan::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.xinan::after{
 	content: '\e60f';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.xi::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.xi::after{
 	content: '\e60e';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.dong::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.dong::after{
 	content: '\e610';
 	display: inline-block;
 	clear: both;
 }
-.userAction .suggestionPage .weatherList div:last-child p .iconfont.nan::after{
+.userAction .suggestionPage .weatherList .weatherItems p .iconfont.nan::after{
 	content: '\e612';
 	display: inline-block;
 	clear: both;

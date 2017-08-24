@@ -29,10 +29,11 @@ const hello = ({location}) =>(
 						<p>{location.state.today.temperature}°C</p>
 						<p>{location.state.suggest.suggestion.sport.brief}运动</p>
 					</div>
-					<div>
+					<div className='weatherItems'>
 						<p><i className='iconfont'>&#xe71a;</i>湿度 {location.state.today.humidity}%</p>
 						<p><i className='iconfont'>&#xe62d;</i>体感温度 {location.state.today.feels_like}°</p>
 						<WindIcon wind={location.state.today} />
+						<p><i className='iconfont'>&#xe654;</i>紫外线 {location.state.suggest.suggestion.uv.brief}</p> 
 					</div>
 				</div>
 			</div>
