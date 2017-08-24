@@ -1,0 +1,43 @@
+.userAction{
+	width:100%;
+	height:100vh;
+	overflow: auto;
+	background: url('./image/timg.jpg');
+	background-position: 76% 100%
+}
+
+.userAction .ReturnBack{
+	width: 100%;
+	height: 7vh;
+	background: rgba(251,244,242,0.6);
+	position: fixed;
+	top: 0;
+}
+
+.userAction .ReturnBack p:first-child{
+	display: inline-block;
+	width: 10%;
+	height: 7vh;
+	transform: rotateZ(180deg);
+	-webkit-transform: rotateZ(180deg);
+	-moz-transform: rotateZ(180deg);
+}
+.userAction .ReturnBack p:first-child a{
+	text-decoration: none;
+	color: rgba(25,25,25,0.7);
+	
+}
+
+.userAction .ReturnBack p:first-child a i{
+	font-size: 1.5rem;
+	margin-left: 1rem;
+}
+
+.userAction .ReturnBack p:nth-child(2){
+	display: inline-block;
+	text-align: center;
+	width: 90%;
+	margin-left: -10%;
+	font-size: 1.5rem;
+	color: rgba(25,25,25,0.7);
+}
