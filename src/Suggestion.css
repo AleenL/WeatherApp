@@ -92,13 +92,13 @@
 .userAction .suggestionPage .airBox .airSuggest .airNumber p{
 	width: 30%;
 	text-align: center;
-	line-height: 2rem;
+	line-height: 1.5rem;
 }
 .userAction .suggestionPage .weatherList .weatherItems p{
 	font-size: 0.6rem;
 	letter-spacing: 0.05rem;
 	display: inline-block;
-	
+	line-height: 1.6rem;
 }
 
 .userAction .suggestionPage .weatherList .weatherItems p:nth-child(2n+1){
