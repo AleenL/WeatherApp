@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import './Suggestion.css'
 import GetTime from './GetTime'
+import WeatherCN from './weatherCN'
 
 
 
@@ -17,12 +18,18 @@ const hello = ({location}) =>(
 				<p><Link to='/'><i className='iconfont'>&#xe603;</i></Link></p>
 				<p>建议</p>
 			</div>
-			<GetTime/>
-			<p>{location.state.dressing.details}</p>
-			<p>{location.state.flu.details}</p>
-			<p>{location.state.car_washing.details}</p>
-			<p>{location.state.sport.details}</p>
-			<p>{location.state.travel.details}</p>
+			<div className='suggestionPage'>
+				<GetTime/>
+				<div className='weatherList'>
+				{console.log(location.state)}
+					<div className='weatherListTitle'>
+						<WeatherCN weather={location.state.today} getIcon='Icon' />
+						<p>{location.state.today.text}</p>
+						<p>{location.state.today.temperature}°C</p>
+						<p>{location.state.suggest.suggestion.sport.brief}运动</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 )

@@ -88,9 +88,9 @@ class GetLocation extends React.Component{
 			that.setState({
       		 	tmp: result.weather[0].now.temperature,
       		 	city: result.weather[0].city_name,
-      		 	today: result.weather[0].now,
+      		 	now: result.weather[0].now,
       		 	Air: result.weather[0].now.air_quality,
-      		 	suggest: result.weather[0].today.suggestion,
+      		 	today: result.weather[0].today,
       		 	future:{
       		 		day1: result.weather[0].future[0],
       		 		day2: result.weather[0].future[1],
@@ -124,7 +124,7 @@ class GetLocation extends React.Component{
 					<p><Link to='/City'><i className='iconfont'>&#xe648;</i></Link></p>
 					<p><Link to={{
 						pathname:'/Suggest',
-						state:this.state.suggest
+						state:{today:this.state.now,suggest:this.state.today}
 					}}><i className='iconfont'>&#xe6e5;</i></Link></p>
 				</div>
 				<div className='airQuality'>

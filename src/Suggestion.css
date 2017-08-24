@@ -2,22 +2,23 @@
 	width:100%;
 	height:100vh;
 	overflow: auto;
-	background: url('./image/timg.jpg');
-	background-position: 76% 100%
+	background: rgba(0,0,0,.3);
+	position: relative;
 }
 
 .userAction .ReturnBack{
 	width: 100%;
 	height: 7vh;
 	background: rgba(251,244,242,0.6);
+	box-shadow: 0 0 5px rgb(211,211,211);
 	position: fixed;
 	top: 0;
 }
 
 .userAction .ReturnBack p:first-child{
-	display: inline-block;
-	width: 10%;
-	height: 7vh;
+	position: absolute;
+	line-height: 7vh;
+	left: 5%;
 	transform: rotateZ(180deg);
 	-webkit-transform: rotateZ(180deg);
 	-moz-transform: rotateZ(180deg);
@@ -25,22 +26,57 @@
 .userAction .ReturnBack p:first-child a{
 	text-decoration: none;
 	color: rgba(25,25,25,0.7);
-	
 }
 
 .userAction .ReturnBack p:first-child a i{
 	font-size: 1.5rem;
-	margin-left: 1rem;
 }
 
 .userAction .ReturnBack p:nth-child(2){
-	display: inline-block;
 	text-align: center;
-	width: 90%;
-	margin-left: -10%;
-	font-size: 1.5rem;
+	font-size: 1.1rem;
 	color: rgba(25,25,25,0.7);
+	line-height: 7vh;
 }
 .userAction  .timeShow{
-	color: #f9cc9d;
+	color: #ff8230;
+	font-size: 1.1rem;
+	left: 5%;
+	top: 9vh;
+	letter-spacing: 0.1rem;
+	font-weight: 200;
+	position: absolute;
+}
+
+.userAction .suggestionPage{
+	margin-top: 8vh;
+	margin-left: 25%;
+}
+
+.userAction .suggestionPage .weatherList p:first-child i{
+	font-size: 2rem;
+	color: #fdca22;
+}
+.userAction .suggestionPage .weatherList p:last-of-type{
+	padding: 0 .8rem;
+	background: #ff8230;
+	border-radius: 4px;
+}
+
+.userAction .suggestionPage .weatherList p{
+	font-size: .82rem;
+	color: rgba(255,255,255,.8);
+	font-weight: 200;
+}
+
+.userAction .suggestionPage .weatherList .weatherListTitle{
+	width: 80%;
+	height: 2rem;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
