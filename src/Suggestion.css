@@ -38,21 +38,11 @@
 	color: rgba(25,25,25,0.7);
 	line-height: 7vh;
 }
-.userAction  .timeShow{
-	color: #ff8230;
-	font-size: 1.1rem;
-	width: 15%;
-	left: 5%;
-	top: 9vh;
-	letter-spacing: 0.1rem;
-	font-weight: 200;
-	position: absolute;
-}
 
 .userAction .suggestionPage{
 	margin-top: 8.5vh;
-	margin-left: 25%;
-	width: 75%;
+	margin-left: 15%;
+	width: 85%;
 }
 
 .userAction .suggestionPage .weatherList>p:first-child i{
@@ -62,7 +52,7 @@
 
 
 .userAction .suggestionPage .weatherList p{
-	font-size: .82rem;
+	font-size: .6rem;
 	color: rgba(255,255,255,.8);
 	font-weight: 200;
 }
@@ -73,15 +63,21 @@
 }
 
 .userAction .suggestionPage .weatherList .weatherListTitle p,
-.userAction .suggestionPage .airBox p{
+.userAction .suggestionPage .airBox p,
+.userAction .suggestionPage .todayBox p{
 	display: inline-block;
 	line-height: 3rem;
 	margin-right: 0.5rem;
 }
 
-.userAction .suggestionPage .airBox p i{
+.userAction .suggestionPage .todayBox .todayTitle p i{
+	font-size: 1.05rem;
+}
+
+.userAction .suggestionPage .airBox p i,
+.userAction .suggestionPage .todayBox p i{
 	position: relative;
-	top: 3px;
+	top: 2px;
 }
 
 .userAction .suggestionPage .weatherList .weatherItems,
@@ -101,7 +97,6 @@
 }
 .userAction .suggestionPage .weatherList .weatherItems p{
 	font-size: 0.6rem;
-	letter-spacing: 0.05rem;
 	display: inline-block;
 	line-height: 1.6rem;
 }
@@ -116,6 +111,7 @@
 	background: #ff8230;
 	border-radius: 4px;
 }
+
 
 .userAction .suggestionPage .weatherList .weatherItems p .iconfont.xibei::after{
 	content: '\e616';

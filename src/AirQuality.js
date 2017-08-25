@@ -11,7 +11,7 @@ class AirQuality extends React.Component{
 	}
 
 	
-	componentWillUpdate(nextProps) {
+	componentDidUpdate(nextProps) {
 		if(this.props.air !== nextProps.air){
 			this.changeFace(this.props.air.city.aqi)
 		}

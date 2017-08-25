@@ -121,6 +121,10 @@ GetTime.prototype.GetLunarDay = function() {
     }
 }
 
+GetTime.prototype.getYangli = function(){
+	return `${this.yy}年${this.mm}月${this.dd}日`
+}
+
 GetTime.prototype.GetHM = function(){
 	var tmp = '';
 	tmp += (this.hh<10) ? "0"+this.hh : this.hh;
