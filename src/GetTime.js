@@ -9,8 +9,9 @@ function GetTime(time){
 	this.dd = time.getDate();
 	this.ww = time.getDay();
 	this.ss = parseInt(time.getTime() / 1000);
+	this.hh = time.getHours();
+	this.mi = time.getMinutes();
 	if (this.yy<100) this.yy = '19'+ this.yy;
-	this.GetLunarDay(this.yy,this.mm,this.dd)
 }
 
 
@@ -90,6 +91,11 @@ GetTime.prototype.e2c = function() {
 
 GetTime.prototype.GetcDateString = function() {
    var tmp = "";
+   tmp+=this.tgString.charAt((this.cYear-4)%10); 
+	tmp+=this.dzString.charAt((this.cYear-4)%12); 
+	tmp+="("; 
+	tmp+=this.sx.charAt((this.cYear-4)%12); 
+	tmp+=")年 ";
    if (this.cMonth < 1) {
         tmp += "(闰)";
         tmp += this.monString.charAt(-this.cMonth - 1);
@@ -104,15 +110,24 @@ GetTime.prototype.GetcDateString = function() {
     return tmp;
 }
 
-GetTime.prototype.GetLunarDay = function(solarYear, solarMonth, solarDay) {
+GetTime.prototype.GetLunarDay = function() {
     //solarYear = solarYear<1900?(1900+solarYear):solarYear; 
-    if (solarYear < 1921 || solarYear > 2020) {
+    if (this.yy < 1921 || this.yy > 2020) {
         return "";
     } else {
-        solarMonth = (parseInt(solarMonth) > 0) ? (solarMonth - 1) : 11;
-        this.e2c(solarYear, solarMonth, solarDay);
+        this.mm = (parseInt(this.mm) > 0) ? (this.mm - 1) : 11;
+        this.e2c(this.yy, this.mm, this.dd);
         return this.GetcDateString();
     }
+}
+
+GetTime.prototype.GetHM = function(){
+	var tmp = '';
+	tmp += (this.hh<10) ? "0"+this.hh : this.hh;
+	tmp += ':';
+	tmp += (this.mi<10) ? "0"+this.mi : this.mi;
+
+	return tmp
 }
 
 export default GetTime

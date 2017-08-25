@@ -19,7 +19,8 @@ class Yinli extends React.Component{
 			years:GanZhi,
 			animte:Animate
 		})
-		let time = new GetTime(new Date()).GetcDateString()
+		let time = new GetTime(new Date()).GetHM()
+		
 		console.log(time)
 	}
 

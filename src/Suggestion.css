@@ -79,6 +79,11 @@
 	margin-right: 0.5rem;
 }
 
+.userAction .suggestionPage .airBox p i{
+	position: relative;
+	top: 3px;
+}
+
 .userAction .suggestionPage .weatherList .weatherItems,
 .userAction .suggestionPage .airBox .airSuggest{
 	width: 95%;

@@ -12,6 +12,8 @@ import WindIcon from './WindIcon'
 import AirQuality from './AirQuality'
 import Yinli from './Yinli'
 
+
+
 const hello = ({location}) =>(
 	<div>
 		<div className='userAction'>
@@ -20,6 +22,7 @@ const hello = ({location}) =>(
 				<p>建议</p>
 			</div>
 			<div className='suggestionPage'>
+				<p className='timeShow'>{new GetTime(new Date()).GetHM()}</p>
 				<div className='weatherList'>
 				{console.log(location.state)}
 					<div>
