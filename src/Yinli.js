@@ -1,5 +1,6 @@
 import React from 'react'
 import Ajax from './Ajax'
+import GetTime from './GetTime'
 
 class Yinli extends React.Component{
 	constructor(props){
@@ -18,6 +19,8 @@ class Yinli extends React.Component{
 			years:GanZhi,
 			animte:Animate
 		})
+		let time = new GetTime(new Date()).GetcDateString()
+		console.log(time)
 	}
 
 	Shuxing(node){
