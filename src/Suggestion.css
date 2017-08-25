@@ -64,7 +64,8 @@
 
 .userAction .suggestionPage .weatherList .weatherListTitle p,
 .userAction .suggestionPage .airBox p,
-.userAction .suggestionPage .todayBox p{
+.userAction .suggestionPage .todayBox p,
+.userAction .suggestionPage .styleBox p{
 	display: inline-block;
 	line-height: 3rem;
 	margin-right: 0.5rem;
@@ -149,6 +150,9 @@
 	display: inline-block;
 	clear: both;
 }
+
+
+
 .userAction .suggestionPage .weatherList .weatherItems p .iconfont.nan::after{
 	content: '\e612';
 	display: inline-block;
@@ -161,6 +165,37 @@
 }
 .userAction .suggestionPage .airBox .airTitle p .iconfont.bad::after{
 	content: '\e647';
+	display: inline-block;
+	clear: both;
+}
+
+.userAction .suggestionPage .weatherList p .iconfont.washingCar::after{
+	content: '\e601';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList p .iconfont.clothes::after{
+	content: '\e608';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList p .iconfont.feelCold::after{
+	content: '\e8af';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList p .iconfont.uvNumber::after{
+	content: '\e633';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList p .iconfont.travel::after{
+	content: '\e615';
+	display: inline-block;
+	clear: both;
+}
+.userAction .suggestionPage .weatherList p .iconfont.Sport::after{
+	content: '\e64d';
 	display: inline-block;
 	clear: both;
 }

@@ -4,7 +4,7 @@ class GetSuggestion extends React.Component{
 	constructor(props) {
 		super(props);
 		this.state={
-			style:null,
+			style:this.props.style,
 			text:null,
 			icon:null
 		}
@@ -31,12 +31,13 @@ class GetSuggestion extends React.Component{
 
 	render(){
 		return(
-			<div className='clothesBox'>
-				<div className='clothesTitle'>
-					{console.log(this.state.style)}
+			<div className='styleBox'>
+				<div className='styleTitle'>
+					<p><i className={`iconfont ${this.state.icon}`}></i></p>
+					<p> {this.state.text} : {this.state.style.brief}</p>
 				</div>
 				<div className='weatherItems'>
-					
+					<p style={{width:'100%'}}>{this.state.style.details}</p> 
 				</div>
 			</div>
 		)

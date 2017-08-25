@@ -127,9 +127,6 @@ class GetLocation extends React.Component{
 						state:{today:this.state.now,suggest:this.state.today}
 					}}><i className='iconfont'>&#xe6e5;</i></Link></p>
 				</div>
-				<div className='airQuality'>
-					{this.state.Air && <p>PM:{this.state.Air.city.pm25}</p>}
-				</div>
 			</div>
 		)
 	}

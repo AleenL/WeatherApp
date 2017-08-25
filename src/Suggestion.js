@@ -14,13 +14,6 @@ import Yinli from './Yinli'
 import GetToday from './GetToday'
 import GetSuggestion from './GetSuggestion'
 
-const suggestion = [
-	{text:['洗车建议','温度状况','感冒指数','运动建议','旅游建议','防晒指数']},
-	{icon:['washingCar','clothes','feelCold','Sport','Traving','uvNumber']}
-	]
-
-
-
 const hello = ({location}) =>(
 	<div>
 		<div className='userAction'>
@@ -48,6 +41,11 @@ const hello = ({location}) =>(
 					<GetToday today={location.state.suggest}/>
 					<AirQuality air={location.state.today.air_quality} />
 					<GetSuggestion style={location.state.suggest.suggestion.car_washing} icon='washingCar' text='洗车建议'/>
+					<GetSuggestion style={location.state.suggest.suggestion.dressing} icon='clothes' text='温度状况'/>
+					<GetSuggestion style={location.state.suggest.suggestion.flu} icon='feelCold' text='感冒指数'/>
+					<GetSuggestion style={location.state.suggest.suggestion.sport} icon='Sport' text='运动建议'/>
+					<GetSuggestion style={location.state.suggest.suggestion.car_washing} icon='travel' text='旅游建议'/>
+					<GetSuggestion style={location.state.suggest.suggestion.uv} icon='uvNumber' text='防晒指数'/>
 				</div>
 			</div>
 		</div>
