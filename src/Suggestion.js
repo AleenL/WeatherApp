@@ -23,7 +23,6 @@ const hello = ({location}) =>(
 			</div>
 			<div className='suggestionPage'>
 				<div className='weatherList'>
-				{console.log(location.state)}
 					<div>
 						<div className='weatherListTitle'>
 							<WeatherCN weather={location.state.today} getIcon='Icon' />
