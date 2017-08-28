@@ -33,7 +33,7 @@ There were some screenshot about this mobile Web.
 
 ![Component](https://upload-images.jianshu.io/upload_images/3257837-7afcea5474777405.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-<iframe height=500 width=500 src="http://ww4.sinaimg.cn/mw690/e75a115bgw1f3rrbzv1m8g209v0diqv7.gif">
+
 
 
 
