@@ -1,14 +1,15 @@
 {
-  "main.css": "static/css/main.14bb2b99.css",
-  "main.css.map": "static/css/main.14bb2b99.css.map",
-  "main.js": "static/js/main.372c4d40.js",
-  "main.js.map": "static/js/main.372c4d40.js.map",
+  "main.css": "static/css/main.5f39bc52.css",
+  "main.css.map": "static/css/main.5f39bc52.css.map",
+  "main.js": "static/js/main.82d73a4d.js",
+  "main.js.map": "static/js/main.82d73a4d.js.map",
   "static/media/Blood.png": "static/media/Blood.11bff43a.png",
   "static/media/Moon.png": "static/media/Moon.21c990af.png",
   "static/media/Sun.png": "static/media/Sun.929b6259.png",
-  "static/media/iconfont.eot?t=1501754609894": "static/media/iconfont.321277ed.eot",
-  "static/media/iconfont.svg?t=1501754609894": "static/media/iconfont.7228f9f0.svg",
-  "static/media/iconfont.ttf?t=1501754609894": "static/media/iconfont.de1fdc3d.ttf",
-  "static/media/iconfont.woff?t=1501754609894": "static/media/iconfont.0103735c.woff",
+  "static/media/cityBackground.jpg": "static/media/cityBackground.c0cb5811.jpg",
+  "static/media/iconfont.eot?t=1501754609894": "static/media/iconfont.34a8eedb.eot",
+  "static/media/iconfont.svg?t=1501754609894": "static/media/iconfont.881746b6.svg",
+  "static/media/iconfont.ttf?t=1501754609894": "static/media/iconfont.d80d0cf6.ttf",
+  "static/media/iconfont.woff?t=1501754609894": "static/media/iconfont.d1198b5a.woff",
   "static/media/newFont.ttf": "static/media/newFont.575e6ae8.ttf"
 }
