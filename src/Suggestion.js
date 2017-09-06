@@ -10,7 +10,6 @@ import GetTime from './GetTime'
 import WeatherCN from './weatherCN'
 import WindIcon from './WindIcon'
 import AirQuality from './AirQuality'
-import Yinli from './Yinli'
 import GetToday from './GetToday'
 import GetSuggestion from './GetSuggestion'
 

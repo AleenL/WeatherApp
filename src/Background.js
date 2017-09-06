@@ -46,10 +46,10 @@ class Background extends React.Component{
 			return(
 				<div className="Background" style={{backgroundImage:'url('+BackgroundUrl+')'}}>
 					<Switch location={isModal?this.previousLocation : location}>
-						<Route exact  path='WeatherApp/build/index.html/' component={GetLocation}/>
-						<Route  path='WeatherApp/build/index.html/Setting' component={SettingTitle}/>
-						<Route  path='WeatherApp/build/index.html/City' component={GetCity}/>
-						<Route  path='WeatherApp/build/index.html/Suggest' component={Suggestion}/>
+						<Route exact  path='/' component={GetLocation}/>
+						<Route  path='/Setting' component={SettingTitle}/>
+						<Route  path='/City' component={GetCity}/>
+						<Route  path='/Suggest' component={Suggestion}/>
 					</Switch>
 				</div>
 			)
